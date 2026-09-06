@@ -145,7 +145,11 @@
 
     var colours = {
       ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
-      slow: '#8b94a5', trickle: '#8b94a5', unknown: '#8b94a5', planned: '#f0a92e',
+      // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
+      // roughly 2.7:1 contrast against the light OSM basemap, well under the
+      // 3:1 minimum for graphical objects, so slow/unknown-power sites (the
+      // most common category) all but disappeared once zoomed into the tiles.
+      slow: '#6b7280', trickle: '#6b7280', unknown: '#6b7280', planned: '#f0a92e',
       approximate: '#6b3fb5',
     };
 
@@ -179,7 +183,10 @@
       // so it never reads as a precise location.
       var approx = cls === 'approximate';
       var marker = L.circleMarker([s.lat, s.lng], {
-        radius: selected ? 11 : approx ? 10 : (cls === 'ultra' || cls === 'rapid' ? 6 : 5),
+        // Every band gets the same base size — a slow/unknown-power charger
+        // isn't a smaller data point than a fast one, and shrinking it on
+        // top of a low-contrast grey fill made it doubly hard to spot.
+        radius: selected ? 11 : approx ? 10 : 6,
         color: selected ? '#35d07f' : approx ? '#6b3fb5' : 'rgba(255,255,255,0.85)',
         weight: selected ? 3 : approx ? 2 : 1.5,
         dashArray: approx ? '3,3' : null,
@@ -264,7 +271,11 @@
 
     var colours = {
       ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
-      slow: '#8b94a5', trickle: '#8b94a5', unknown: '#8b94a5', planned: '#f0a92e',
+      // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
+      // roughly 2.7:1 contrast against the light OSM basemap, well under the
+      // 3:1 minimum for graphical objects, so slow/unknown-power sites (the
+      // most common category) all but disappeared once zoomed into the tiles.
+      slow: '#6b7280', trickle: '#6b7280', unknown: '#6b7280', planned: '#f0a92e',
     };
     (sites || []).forEach(function (s) {
       var p = project(s.lat, s.lng);
