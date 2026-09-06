@@ -2485,6 +2485,7 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
   var map = null;
   var markerLayer = null;
   var markers = {};       // id -> marker
+  var hoveredId = null;   // site id currently enlarged from a list hover
   var tilesFailed = false;
   var CLUSTER_PIXEL_RADIUS = 70; // target on-screen radius for a grouped cell, in CSS px
   var CLUSTER_MIN_SITES = 40;    // below this, bucketing has nothing worth merging anyway
@@ -2537,6 +2538,7 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
   function renderMarkers(sites) {
     markerLayer.clearLayers();
     markers = {};
+    hoveredId = null; // the old marker object is gone; stop tracking it
 
     var zoom = map.getZoom();
     // Each display item is { site, count } — count is 1 for an ungrouped site.
@@ -2623,17 +2625,23 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
       // A town-level record is drawn as a large hollow ring rather than a pin,
       // so it never reads as a precise location.
       var approx = cls === 'approximate';
+      // Every band gets the same base size — a slow/unknown-power charger
+      // isn't a smaller data point than a fast one, and shrinking it on
+      // top of a low-contrast grey fill made it doubly hard to spot.
+      var baseRadius = selected ? 11 : approx ? 10 : 6;
+      var baseWeight = selected ? 3 : approx ? 2 : 1.5;
       var marker = L.circleMarker([s.lat, s.lng], {
-        // Every band gets the same base size — a slow/unknown-power charger
-        // isn't a smaller data point than a fast one, and shrinking it on
-        // top of a low-contrast grey fill made it doubly hard to spot.
-        radius: selected ? 11 : approx ? 10 : 6,
+        radius: baseRadius,
         color: selected ? '#35d07f' : approx ? '#6b3fb5' : 'rgba(255,255,255,0.85)',
-        weight: selected ? 3 : approx ? 2 : 1.5,
+        weight: baseWeight,
         dashArray: approx ? '3,3' : null,
         fillColor: colours[cls] || colours.unknown,
         fillOpacity: approx ? 0.12 : cls === 'planned' ? 0.35 : 0.95,
       });
+      // Stashed so hoverSite()/clearHover() can restore the exact size
+      // without recomputing the selected/approx/band logic above.
+      marker._baseRadius = baseRadius;
+      marker._baseWeight = baseWeight;
       marker.on('click', function () { selectSite(s.id, { pan: false }); });
       marker.bindTooltip(
         (s.displayName || s.name || 'Unnamed site') + (s.maxPowerKw ? ' · ' + s.maxPowerKw + 'kW' : '') +
@@ -2645,6 +2653,28 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     });
 
     if (tilesFailed) drawFallbackMap(display.map(function (item) { return item.site; }));
+  }
+
+  /**
+   * Enlarge a site's marker when its row in the results list is hovered.
+   * No-ops if the site is currently folded into a cluster bubble rather than
+   * drawn as its own marker — there is nothing on screen to point at.
+   */
+  function hoverSite(id) {
+    if (hoveredId === id) return;
+    clearHover();
+    var marker = markers[id];
+    if (!marker) return;
+    hoveredId = id;
+    marker.setStyle({ radius: marker._baseRadius + 5, weight: marker._baseWeight + 1.5 });
+    marker.bringToFront();
+  }
+
+  function clearHover() {
+    if (!hoveredId) return;
+    var marker = markers[hoveredId];
+    hoveredId = null;
+    if (marker) marker.setStyle({ radius: marker._baseRadius, weight: marker._baseWeight });
   }
 
   function updateMapHint(thinned, shown, total) {
@@ -3122,6 +3152,19 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     el['results'].addEventListener('click', function (e) {
       var btn = e.target.closest ? e.target.closest('.result') : null;
       if (btn && btn.dataset.id) selectSite(btn.dataset.id);
+    });
+
+    // mouseenter/mouseleave don't bubble, so delegate via mouseover/mouseout
+    // (like the click handler above) rather than re-binding per row on every
+    // re-render. Guard mouseout against moving between children of the same
+    // .result — only clear once the pointer actually leaves the row.
+    el['results'].addEventListener('mouseover', function (e) {
+      var btn = e.target.closest ? e.target.closest('.result') : null;
+      if (btn && btn.dataset.id) hoverSite(btn.dataset.id);
+    });
+    el['results'].addEventListener('mouseout', function (e) {
+      var btn = e.target.closest ? e.target.closest('.result') : null;
+      if (btn && (!e.relatedTarget || !btn.contains(e.relatedTarget))) clearHover();
     });
 
     el['locate'].addEventListener('click', function () {
