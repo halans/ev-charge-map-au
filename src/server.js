@@ -125,7 +125,10 @@ function queryFromParams(params) {
     minSources: one('minSources'),
     minConfidence: one('minConfidence'),
     sort: one('sort'),
-    limit: one('limit'),
+    // search.query() treats an explicit `null` limit as "no limit" — omitting
+    // the query param entirely must stay the default 100-per-page behaviour,
+    // so pass undefined (not one()'s null-for-absent) when it's not given.
+    limit: params.has('limit') ? one('limit') : undefined,
     offset: one('offset'),
   };
 }

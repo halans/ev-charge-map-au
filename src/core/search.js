@@ -83,7 +83,9 @@ function normaliseQuery(raw = {}) {
     minSources: raw.minSources ? Number(raw.minSources) : null,
     minConfidence: raw.minConfidence ? Number(raw.minConfidence) : null,
     sort: raw.sort || null,
-    limit: raw.limit !== undefined && raw.limit !== null && raw.limit !== '' ? Number(raw.limit) : 100,
+    // null explicitly means "no limit" (see the q.limit === null branch below);
+    // that is distinct from omitting the field, which defaults to a page of 100.
+    limit: raw.limit === null ? null : raw.limit !== undefined && raw.limit !== '' ? Number(raw.limit) : 100,
     offset: raw.offset ? Number(raw.offset) : 0,
   };
 

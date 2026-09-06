@@ -45,6 +45,8 @@
   var markerLayer = null;
   var markers = {};       // id -> marker
   var tilesFailed = false;
+  var CLUSTER_PIXEL_RADIUS = 70; // target on-screen radius for a grouped cell, in CSS px
+  var CLUSTER_MIN_SITES = 40;    // below this, bucketing has nothing worth merging anyway
 
   function initMap() {
     map = L.map('map', {
@@ -86,11 +88,10 @@
 
   /**
    * Render markers for the current result set. Uses circle markers on a canvas
-   * renderer; at low zoom we thin the set by grid so the map stays responsive
-   * on a phone without pulling in a clustering dependency. Grid cells with
-   * more than one site are drawn as a numbered cluster bubble instead of
-   * silently keeping only the top representative, so zooming out never hides
-   * how much is actually there.
+   * renderer; sites that fall within CLUSTER_PIXEL_RADIUS screen-pixels of
+   * each other, at whatever the current zoom happens to be, are grouped into
+   * one numbered cluster bubble rather than a scatter of overlapping pins —
+   * no zoom cutoff and no clustering dependency required.
    */
   function renderMarkers(sites) {
     markerLayer.clearLayers();
@@ -99,14 +100,24 @@
     var zoom = map.getZoom();
     // Each display item is { site, count } — count is 1 for an ungrouped site.
     var display = sites.map(function (s) { return { site: s, count: 1 }; });
-    var thinned = false;
 
-    if (zoom < 8 && sites.length > 600) {
+    if (sites.length > CLUSTER_MIN_SITES) {
       // Bucket into one entry per grid cell, keeping the highest-powered
       // site as the representative (so fast chargers still surface their
       // own detail when the cluster is opened) and counting the rest.
-      thinned = true;
-      var cellM = zoom <= 4 ? 60000 : zoom <= 6 ? 20000 : 6000;
+      //
+      // Cell size is derived from the map's actual ground resolution at the
+      // current zoom (standard Web Mercator metres-per-pixel, adjusted for
+      // latitude), targeting a constant ~CLUSTER_PIXEL_RADIUS on screen —
+      // the same rule at every zoom, not just below some cutoff. Clustering
+      // used to hard-stop at zoom 8, on the assumption that "zoomed in"
+      // meant "spread out", but a dense CBD at zoom 12+ can still have
+      // dozens of sites within a few screen-pixels of each other (multiple
+      // stalls at one car park, several networks at one shopping centre).
+      // The pixel-radius rule already leaves genuinely spread-out markers
+      // alone at any zoom, so there's no need to disable it by zoom at all.
+      var metresPerPixel = 156543.03392 * Math.cos(map.getCenter().lat * Math.PI / 180) / Math.pow(2, zoom);
+      var cellM = metresPerPixel * CLUSTER_PIXEL_RADIUS;
       var buckets = {};
       sites.forEach(function (s) {
         var key = geo.cellKey(s.lat, s.lng, cellM);
@@ -120,6 +131,11 @@
       });
       display = Object.keys(buckets).map(function (k) { return buckets[k]; });
     }
+
+    // Only worth mentioning when grouping actually reduced what's on
+    // screen — with real counts on every bubble, nothing is hidden, so
+    // this is purely about the list panel showing a different slice.
+    var thinned = display.length < sites.length;
 
     // The list panel shows a separately-sliced subset of the same query
     // (see LIST_LIMIT), so at low zoom the pins on screen and the rows in
