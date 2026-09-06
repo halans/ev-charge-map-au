@@ -82,15 +82,9 @@ html, body {
 .brand { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
 
 .brand-mark {
-  /* display:block is required, not cosmetic. This is a <span>, and width and
-     height do not apply to non-replaced inline elements. It currently renders
-     only because .brand is a flex container and flex items get blockified —
-     i.e. by luck. Stating it explicitly means the element survives a change of
-     parent layout. (The report page shipped two blank bar charts for exactly
-     this reason: sized spans whose parent was not a flex or grid container.) */
-  display: block;
+  display: block; /* avoids the few px of inline baseline gap under an <img> */
   width: 22px; height: 22px; border-radius: 6px;
-  background: linear-gradient(140deg, var(--accent), var(--fast));
+  object-fit: cover;
   box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset;
 }
 
