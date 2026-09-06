@@ -122,25 +122,52 @@ function textScore(site, text) {
   if (!needle) return 1;
   const tokens = needle.split(/\s+/).filter(Boolean);
   let score = 0;
+  const matchedTokens = new Set();
 
   for (const [field, weight] of TEXT_FIELDS) {
     const value = site[field];
     if (!value) continue;
     const hay = String(value).toLowerCase();
     for (const t of tokens) {
-      if (hay.includes(t)) score += weight;
+      if (hay.includes(t)) {
+        score += weight;
+        matchedTokens.add(t);
+      }
       if (hay.startsWith(t)) score += weight * 0.5; // prefix bonus
     }
   }
 
   // Address components: suburb is what people actually type.
-  if (site.address) {
-    for (const part of [site.address.suburb, site.address.street, site.address.postcode]) {
-      if (!part) continue;
-      const hay = String(part).toLowerCase();
-      for (const t of tokens) if (hay.includes(t)) score += 2;
+  //
+  // REGRESSION GUARD: the full site (CLI, HTTP API) keeps a structured
+  // address — site.address.suburb / .street / .postcode. The browser's
+  // slimmed site instead flattens it to a single display string on
+  // site.address, plus top-level site.suburb / site.postcode (see slimSite()
+  // in build/build-web.js). Reading site.address.suburb off a string silently
+  // returns undefined, so this loop did nothing at all on the web map —
+  // suburb search worked from the CLI and API and never from the page itself.
+  // Handle both shapes so text search stays identical across all three.
+  const addressParts =
+    site.address && typeof site.address === 'object'
+      ? [site.address.suburb, site.address.street, site.address.postcode]
+      : [site.address, site.suburb, site.postcode];
+  for (const part of addressParts) {
+    if (!part) continue;
+    const hay = String(part).toLowerCase();
+    for (const t of tokens) {
+      if (hay.includes(t)) {
+        score += 2;
+        matchedTokens.add(t);
+      }
     }
   }
+
+  // REGRESSION GUARD: each token used to be scored independently, so a
+  // two-word query like "Central Coast" matched anything containing EITHER
+  // word — every "Gold Coast" and "Sunshine Coast" site buried the actual
+  // Central Coast results. A multi-word query must find every word
+  // somewhere (not necessarily the same field) before it counts as a match.
+  if (matchedTokens.size < tokens.length) score = 0;
 
   // Fuzzy fallback so "chargefoxx" or reordered words still find something.
   if (score === 0 && site.name) {

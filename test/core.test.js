@@ -774,6 +774,48 @@ module.exports = function run() {
       assert.equal(search.query(sites, { text: 'sydney' }).total, 1);
     });
 
+    it('REGRESSION: matches suburb on the browser\'s flattened site shape', () => {
+      // build/build-web.js's slimSite() ships address as a plain display
+      // string (not { suburb, street, postcode }) plus top-level suburb and
+      // postcode fields, to save bytes in the embedded dataset. textScore()
+      // used to read site.address.suburb unconditionally, which is undefined
+      // on a string — suburb search silently did nothing on the web map while
+      // working fine from the CLI and HTTP API, which keep the full shape.
+      const slim = [
+        {
+          id: 'x', name: 'Kerbside Charger', displayName: 'Kerbside Charger', operator: 'EVX',
+          lat: -37.8, lng: 145.0, state: 'VIC', maxPowerKw: 22, speedBand: 'slow',
+          connectors: [], status: 'operational', sourceCount: 1, confidence: 0.5, conflicts: [],
+          address: '12 Example St, Reservoir, VIC, 3073', suburb: 'Reservoir', postcode: '3073',
+        },
+      ];
+      assert.equal(search.query(slim, { text: 'reservoir' }).total, 1);
+      assert.equal(search.query(slim, { text: '3073' }).total, 1);
+    });
+
+    it('REGRESSION: a multi-word query requires every word, not any word', () => {
+      // Each token used to be scored independently, so "Central Coast" also
+      // matched every unrelated "Gold Coast" or "Sunshine Coast" site —
+      // anything sharing just one of the two words. On the real dataset this
+      // inflated an 18-site match to 105.
+      const multi = [
+        {
+          id: 'cc', name: 'Tesla — Central Coast', displayName: 'Tesla — Central Coast', operator: 'Tesla',
+          lat: -33.4, lng: 151.3, state: 'NSW', status: 'operational', sourceCount: 1, confidence: 0.5,
+          conflicts: [], connectors: [], address: { suburb: 'Central Coast', postcode: '2261' },
+        },
+        {
+          id: 'gc', name: 'Chargefox Gold Coast', displayName: 'Chargefox Gold Coast', operator: 'Chargefox',
+          lat: -28.0, lng: 153.4, state: 'QLD', status: 'operational', sourceCount: 1, confidence: 0.5,
+          conflicts: [], connectors: [], address: { suburb: 'Gold Coast', postcode: '4217' },
+        },
+      ];
+      const centralCoast = search.query(multi, { text: 'central coast' });
+      assert.equal(centralCoast.total, 1);
+      assert.equal(centralCoast.results[0].id, 'cc');
+      assert.equal(search.query(multi, { text: 'gold coast' }).total, 1);
+    });
+
     it('sorts by distance when a centre is supplied', () => {
       const r = search.query(sites, { lat: -33.87, lng: 151.21 });
       assert.equal(r.sort, 'distance');

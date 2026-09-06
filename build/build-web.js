@@ -230,7 +230,7 @@ ${appStyles}
 <div id="app">
   <header id="topbar">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img class="brand-mark" src="ev-life-sm.jpg" alt="" aria-hidden="true">
       <span class="brand-text">
         <h1>EV Chargers AU</h1>
         <span class="brand-sub">open data only</span>
