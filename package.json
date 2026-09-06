@@ -1,0 +1,42 @@
+{
+  "name": "ev-charge-map-au",
+  "version": "1.0.0",
+  "description": "Open-data pipeline, HTTP API and offline map for public EV charging locations across Australia. Zero runtime dependencies.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "evmap": "bin/evmap.js"
+  },
+  "main": "src/core/index.js",
+  "files": [
+    "bin/",
+    "src/",
+    "build/",
+    "data/cache/",
+    "docs/",
+    "README.md"
+  ],
+  "scripts": {
+    "ingest": "node bin/evmap.js ingest",
+    "ingest:offline": "node bin/evmap.js ingest --offline",
+    "build": "node bin/evmap.js build",
+    "serve": "node bin/evmap.js serve",
+    "stats": "node bin/evmap.js stats",
+    "drift": "node bin/evmap.js drift",
+    "test": "node test/run.js",
+    "all": "npm run ingest:offline && npm run build && npm test"
+  },
+  "keywords": [
+    "ev",
+    "charging",
+    "australia",
+    "open-data",
+    "openstreetmap",
+    "map"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}

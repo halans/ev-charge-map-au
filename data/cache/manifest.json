@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "entries": {
+    "osm-au-chargers.json": {
+      "url": "https://overpass-api.de/api/interpreter",
+      "fetchedAt": "2026-09-05T21:30:08.683Z",
+      "sha256": "fa7980633393628c3f4df01781c080831d7ac1a8005b3d1647fd5b5902c5fdc6",
+      "bytes": 564142,
+      "previousSha256": "fe18f689caea28755c23b6af2fd270cc61b141d28a14e6596f4c9121c538a872",
+      "previousBytes": 564142,
+      "changed": true
+    },
+    "nsw-package.json": {
+      "url": "https://opendata.transport.nsw.gov.au/data/api/3/action/package_show?id=be1c4de4-4517-4bd0-8a09-2965ddfc7179",
+      "fetchedAt": "2026-09-05T21:30:08.854Z",
+      "sha256": "9f8e4e2533386d85b74e5969e0feaf29a9788db8052195d2d458e973fc158904",
+      "bytes": 7413,
+      "previousSha256": "9f8e4e2533386d85b74e5969e0feaf29a9788db8052195d2d458e973fc158904",
+      "previousBytes": 7413,
+      "changed": false
+    },
+    "nsw-ev.csv": {
+      "url": "https://opendata.transport.nsw.gov.au/data/dataset/be1c4de4-4517-4bd0-8a09-2965ddfc7179/resource/7bbb6461-e52d-4fe7-ace4-a15c30198de0/download/ev_20251216.csv",
+      "fetchedAt": "2026-09-05T21:30:09.032Z",
+      "sha256": "42397310a4118b44f8b292cfff487c518e01859d1b695e5565047e2063c8239e",
+      "bytes": 283030,
+      "previousSha256": "42397310a4118b44f8b292cfff487c518e01859d1b695e5565047e2063c8239e",
+      "previousBytes": 283030,
+      "changed": false
+    },
+    "vic-dcav.json": {
+      "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Adcav_site&outputFormat=application%2Fjson",
+      "fetchedAt": "2026-09-05T21:30:09.286Z",
+      "sha256": "599af8433d42aff64e72a701928c514a63080193ed1defcbd7bee718cb9ee686",
+      "bytes": 108744,
+      "previousSha256": "c834faa9edcb8ce97665336a279a1a36f86689bdb1615a1585a5eaabb8e7ad46",
+      "previousBytes": 108744,
+      "changed": true
+    },
+    "qld-ev.csv": {
+      "url": "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/findachargingev/csl_ev.csv",
+      "fetchedAt": "2026-09-05T21:30:09.400Z",
+      "sha256": "6bee7c7e9c902f80724adbf5e9d9167dd8294ae46ee09d6b5acdc3c595294b6a",
+      "bytes": 3798,
+      "previousSha256": "6bee7c7e9c902f80724adbf5e9d9167dd8294ae46ee09d6b5acdc3c595294b6a",
+      "previousBytes": 3798,
+      "changed": false
+    },
+    "tas-chargesmart.html": {
+      "url": "https://nre.tas.gov.au/environment/climate-change/climate-change-grant-programs/electric-vehicle-chargesmart-grants",
+      "fetchedAt": "2026-09-05T21:30:10.977Z",
+      "sha256": "178b5442bfd7dc8f6ee134c2d710ee5e066227fccf01da4aeb1d6544cccd94ba",
+      "bytes": 333367,
+      "previousSha256": "32a64b8a10384fe5f2385aceca3f619a80d437e945636f637efee8aa54530b35",
+      "previousBytes": 333367,
+      "changed": true
+    },
+    "act-chargers.html": {
+      "url": "https://www.climatechoices.act.gov.au/transport-and-travel/zero-emissions-vehicles/public-ev-chargers-in-the-act",
+      "fetchedAt": "2026-09-05T21:30:10.246Z",
+      "sha256": "a57b605adf07d9b7b98c0301375c7340a5179e3e882b28c0b562df9f8f6f400a",
+      "bytes": 159031,
+      "previousSha256": "856ee73ccb5db447b6f91cc47aadbac6d842cbaeb96a9c0f5f7faad7eed04090",
+      "previousBytes": 159034,
+      "changed": true
+    },
+    "ocm-au.json": {
+      "url": "https://api.openchargemap.io/v3/poi?output=json&countrycode=AU&opendata=true&maxresults=10000&compact=false&verbose=false&key=REDACTED",
+      "fetchedAt": "2026-09-05T21:30:14.216Z",
+      "sha256": "18d14de616b7b278c74bcca61e4f896fc1d698be0deeb03421c20ed04b81ecf5",
+      "bytes": 5622037,
+      "previousSha256": null,
+      "previousBytes": null,
+      "changed": true
+    }
+  }
+}

@@ -1,0 +1,500 @@
+/* ==========================================================================
+   EV Chargers AU — application styles
+   Mobile-first. The phone layout is a map with a draggable bottom sheet; at
+   860px the sheet becomes a fixed left sidebar. Desktop behaviour is not
+   altered by the mobile rules (they are scoped below the breakpoint or are
+   the shared base).
+   ========================================================================== */
+
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #1f232c;
+  --border: #2a2f3a;
+  --text: #e8ebf0;
+  --text-dim: #9aa3b2;
+  --accent: #35d07f;
+  --accent-dim: #1f7f4d;
+  --warn: #f0a92e;
+  --danger: #e5534b;
+  --ultra: #b06cf5;
+  --rapid: #35d07f;
+  --fast: #4aa8f0;
+  --slow: #8b94a5;
+  --approx: #6b3fb5;
+  --radius: 10px;
+  --topbar-h: 56px;
+  --footer-h: 34px;
+  --sheet-peek: 132px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --surface-2: #eef1f6;
+    --border: #d5dbe4;
+    --text: #10141b;
+    --text-dim: #5b6575;
+    --accent: #12864f;
+    --accent-dim: #0c6f41;
+    --slow: #6b7484;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-text-size-adjust: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 100dvh; /* avoids the mobile browser chrome clipping the footer */
+}
+
+/* ---------- Top bar ---------- */
+
+#topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--topbar-h);
+  flex: 0 0 auto;
+  padding: 0 10px;
+  padding-top: env(safe-area-inset-top);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 1200;
+}
+
+.brand { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+
+.brand-mark {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: linear-gradient(140deg, var(--accent), var(--fast));
+  box-shadow: 0 0 0 1px rgba(0,0,0,.2) inset;
+}
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text strong { font-size: 14px; letter-spacing: -0.01em; }
+.brand-sub { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .06em; }
+
+/* The brand text is noise on a narrow phone; the mark carries the identity. */
+@media (max-width: 520px) { .brand-text { display: none; } }
+
+.search-wrap { position: relative; flex: 1 1 auto; display: flex; align-items: center; }
+
+#q {
+  width: 100%;
+  height: 36px;
+  padding: 0 40px 0 12px;
+  font-size: 15px; /* 16px-ish avoids iOS zoom-on-focus */
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+}
+#q:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+#q::placeholder { color: var(--text-dim); }
+
+#locate {
+  position: absolute; right: 4px;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  color: var(--text-dim);
+  background: transparent; border: 0; border-radius: 50%;
+  cursor: pointer;
+}
+#locate:hover, #locate:focus-visible { color: var(--accent); background: var(--surface); }
+#locate[data-active="1"] { color: var(--accent); }
+
+button { font-family: inherit; font-size: 13px; }
+
+.ghost {
+  height: 36px; padding: 0 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text); background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 999px;
+  cursor: pointer; white-space: nowrap;
+}
+.ghost:hover { border-color: var(--accent); }
+.ghost.small { height: 26px; padding: 0 10px; font-size: 12px; }
+
+.primary {
+  height: 36px; padding: 0 16px;
+  color: #04160c; background: var(--accent);
+  border: 0; border-radius: 999px;
+  font-weight: 600; cursor: pointer;
+}
+
+.pill {
+  min-width: 18px; height: 18px; padding: 0 5px;
+  display: inline-grid; place-items: center;
+  font-size: 11px; font-weight: 700;
+  color: #04160c; background: var(--accent); border-radius: 999px;
+}
+
+/* ---------- Filters ---------- */
+
+#filters {
+  flex: 0 0 auto;
+  padding: 12px 12px 10px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 1100;
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 11px; color: var(--text-dim); }
+.field > span { text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+
+.field select {
+  height: 38px; padding: 0 8px;
+  font-size: 14px; font-family: inherit;
+  color: var(--text); background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 8px;
+}
+
+/* Colour key under the minimum-power select: ties the numeric thresholds to
+   the same speed-band colours used on the map and in result badges. */
+.power-key {
+  display: flex; flex-wrap: wrap; gap: 4px 10px;
+  margin-top: 2px; font-size: 10px; color: var(--text-dim);
+}
+.power-key > span { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.power-key .swatch { width: 8px; height: 8px; border-width: 1px; }
+
+.check {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text);
+  padding: 8px 0;
+}
+.check input { width: 18px; height: 18px; accent-color: var(--accent); flex: 0 0 auto; }
+.check em { color: var(--text-dim); font-style: normal; font-size: 12px; }
+
+.filter-actions {
+  display: flex; justify-content: flex-end; gap: 8px;
+  margin-top: 12px; padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+/* "Show results" is only meaningful on the phone sheet layout. */
+@media (min-width: 860px) { #filters-done { display: none; } }
+
+/* ---------- Main / map ---------- */
+
+#main { position: relative; flex: 1 1 auto; min-height: 0; }
+
+#map, #fallback-map { position: absolute; inset: 0; width: 100%; height: 100%; background: var(--surface-2); }
+#fallback-map { z-index: 400; }
+
+.leaflet-container { background: var(--surface-2); font-family: var(--font); }
+.leaflet-control-attribution { font-size: 10px; }
+.leaflet-control-attribution, .leaflet-control-attribution a { color: #333; }
+
+/* Charger markers, coloured by speed band. */
+.pin {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+.pin.ultra   { background: var(--ultra); }
+.pin.rapid   { background: var(--rapid); }
+.pin.fast    { background: var(--fast); }
+.pin.medium  { background: var(--fast); opacity: .85; }
+.pin.slow, .pin.trickle { background: var(--slow); }
+.pin.unknown { background: var(--slow); opacity: .7; }
+.pin.planned { background: transparent; border-style: dashed; border-color: var(--warn); }
+.pin.selected { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.cluster {
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 700; color: #04160c;
+  background: var(--accent); border: 2px solid rgba(255,255,255,.85);
+  border-radius: 999px; box-shadow: 0 2px 6px rgba(0,0,0,.4);
+}
+
+/* ---------- Map overlays: transient banners + legend ---------- */
+
+#map-banners {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  z-index: 850;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  max-width: min(92vw, 420px);
+  pointer-events: none; /* only the chips themselves catch clicks */
+}
+
+.chip-notice {
+  pointer-events: auto;
+  padding: 7px 12px;
+  font-size: 12px; line-height: 1.4;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  text-align: center;
+}
+.chip-notice.info { border-color: color-mix(in srgb, var(--fast) 40%, transparent); }
+.chip-notice.warn {
+  border-color: color-mix(in srgb, var(--warn) 45%, transparent);
+  cursor: pointer; /* dismissible on click */
+}
+
+#legend-wrap {
+  position: absolute; top: 10px; right: 10px;
+  z-index: 850;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+}
+#legend-toggle { box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+
+#legend {
+  padding: 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  font-size: 12px;
+  min-width: 190px;
+}
+/* display must be gated on :not([hidden]) — an unconditional `display`
+   here would outrank the browser's default [hidden]{display:none}, since
+   author rules always beat that user-agent rule regardless of specificity,
+   and the panel would never actually hide. */
+#legend:not([hidden]) { display: flex; flex-direction: column; gap: 6px; }
+
+.legend-row { display: flex; align-items: center; gap: 8px; color: var(--text); }
+
+.swatch {
+  width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto;
+  border: 2px solid rgba(255,255,255,.85);
+}
+.swatch.ultra   { background: var(--ultra); }
+.swatch.rapid   { background: var(--rapid); }
+.swatch.fast    { background: var(--fast); }
+/* Literal, not var(--slow): the map marker's fill colour is a fixed hex in
+   app.js (it draws canvas pins, not themed DOM), and --slow is redefined for
+   light mode. The swatch must track the actual pin colour, not the theme. */
+.swatch.slow    { background: #8b94a5; }
+.swatch.planned { background: transparent; border-style: dashed; border-color: var(--warn); }
+.swatch.approx  { background: transparent; border-style: dashed; border-color: var(--approx); }
+
+/* ---------- Results panel: bottom sheet on phones ---------- */
+
+#panel {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 900;
+  display: flex; flex-direction: column;
+  max-height: 85%;
+  height: var(--sheet-peek);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -8px 28px rgba(0,0,0,.35);
+  transition: height .22s ease;
+}
+#panel[data-state="expanded"] { height: 85%; }
+#panel[data-state="hidden"]   { height: 44px; }
+
+#panel-handle {
+  flex: 0 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 8px 12px 6px;
+  font-size: 12px; color: var(--text-dim);
+  cursor: pointer; user-select: none;
+  touch-action: none; /* so the drag gesture is ours, not the browser's */
+}
+.grip { width: 36px; height: 4px; border-radius: 999px; background: var(--border); }
+
+#results, #detail { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+
+.result {
+  display: block; width: 100%; text-align: left;
+  padding: 11px 14px;
+  background: transparent; border: 0; border-bottom: 1px solid var(--border);
+  cursor: pointer; color: inherit;
+}
+.result:hover, .result:focus-visible { background: var(--surface-2); outline: none; }
+.result[aria-current="true"] { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+
+.result-top { display: flex; align-items: baseline; gap: 8px; }
+.result-name { font-size: 14px; font-weight: 600; flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.result-dist { font-size: 12px; color: var(--text-dim); flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+.result-meta { margin-top: 3px; font-size: 12px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 4px 8px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 1px 6px; border-radius: 999px;
+  font-size: 11px; font-weight: 600;
+  border: 1px solid var(--border);
+}
+.badge.kw     { color: var(--text); background: var(--surface-2); }
+.badge.ultra  { color: var(--ultra); border-color: color-mix(in srgb, var(--ultra) 40%, transparent); }
+.badge.rapid  { color: var(--rapid); border-color: color-mix(in srgb, var(--rapid) 40%, transparent); }
+.badge.fast   { color: var(--fast);  border-color: color-mix(in srgb, var(--fast) 40%, transparent); }
+.badge.planned{ color: var(--warn); border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+.badge.conflict { color: var(--warn); }
+.badge.multi  { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.badge.approx { color: var(--ultra); border-color: color-mix(in srgb, var(--ultra) 45%, transparent); }
+
+.empty { padding: 24px 16px; text-align: center; color: var(--text-dim); font-size: 13px; line-height: 1.5; }
+
+/* ---------- Detail view ---------- */
+
+#detail { padding: 0 0 24px; }
+
+.detail-head { padding: 12px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--surface); z-index: 2; }
+.detail-back { margin-bottom: 8px; }
+.detail-title { font-size: 17px; font-weight: 700; margin: 0 0 2px; }
+.detail-sub { font-size: 13px; color: var(--text-dim); }
+
+.detail-section { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.detail-section h4 {
+  margin: 0 0 8px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
+}
+.detail-section summary {
+  margin: 0; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--text-dim);
+  cursor: pointer;
+}
+details.detail-section[open] > summary { margin-bottom: 8px; }
+
+.kv { display: grid; grid-template-columns: minmax(96px, 34%) 1fr; gap: 6px 12px; font-size: 13px; }
+.kv dt { color: var(--text-dim); }
+.kv dd { margin: 0; }
+
+.conn-list { display: flex; flex-direction: column; gap: 6px; }
+.conn {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 7px 10px; font-size: 13px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+}
+.conn strong { font-weight: 600; }
+.conn span { color: var(--text-dim); font-size: 12px; }
+
+.prov { font-size: 12px; }
+.prov-row { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; border-bottom: 1px dashed var(--border); }
+.prov-row:last-child { border-bottom: 0; }
+.prov-row code { font-family: var(--mono); font-size: 11px; color: var(--text-dim); }
+
+.notice {
+  margin: 0; padding: 9px 11px;
+  font-size: 12px; line-height: 1.45;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--warn) 40%, transparent);
+  background: color-mix(in srgb, var(--warn) 12%, transparent);
+  color: var(--text);
+}
+.notice.info { border-color: var(--border); background: var(--surface-2); }
+
+.detail-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.detail-links a {
+  font-size: 12px; text-decoration: none;
+  padding: 6px 10px; border-radius: 999px;
+  color: var(--text); background: var(--surface-2); border: 1px solid var(--border);
+}
+.detail-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Footer ---------- */
+
+#attribution {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  height: var(--footer-h);
+  padding: 0 10px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--text-dim);
+  z-index: 1000;
+}
+#freshness { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- About dialog ---------- */
+
+#about {
+  width: min(680px, 92vw);
+  max-height: 84vh;
+  padding: 0;
+  color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 14px;
+}
+#about::backdrop { background: rgba(0,0,0,.6); }
+#about article { padding: 18px 20px 20px; overflow-y: auto; max-height: 84vh; }
+#about h2 { margin: 0 0 10px; font-size: 19px; }
+#about h3 { margin: 18px 0 8px; font-size: 14px; }
+#about p { margin: 0 0 10px; font-size: 13px; line-height: 1.55; color: var(--text); }
+#about a { color: var(--accent); }
+#about form { margin-top: 16px; display: flex; justify-content: flex-end; }
+.fineprint { font-size: 12px !important; color: var(--text-dim) !important; border-top: 1px solid var(--border); padding-top: 10px; }
+
+.src-card {
+  padding: 10px 12px; margin-bottom: 8px;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+}
+.src-card h4 { margin: 0 0 4px; font-size: 13px; }
+.src-card p { margin: 0 0 4px; font-size: 12px !important; color: var(--text-dim) !important; }
+.src-card .caveat { color: var(--warn) !important; }
+
+/* ==========================================================================
+   Desktop: the sheet becomes a sidebar. Phone rules above are overridden
+   wholesale here rather than being conditionally applied, so the two layouts
+   stay independent.
+   ========================================================================== */
+
+@media (min-width: 860px) {
+  #main { display: flex; }
+
+  #panel {
+    position: relative;
+    z-index: 500;
+    flex: 0 0 380px;
+    height: auto;
+    max-height: none;
+    border-top: 0;
+    border-right: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+    /* The map element precedes the panel in the DOM (so that on a phone the
+       sheet overlays the map). On desktop we want the list on the left, so
+       reorder visually rather than restructuring the markup. */
+    order: -1;
+  }
+  #panel[data-state="expanded"], #panel[data-state="hidden"] { height: auto; }
+
+  #panel-handle { cursor: default; padding: 10px 14px; align-items: flex-start; }
+  #panel-handle .grip { display: none; }
+
+  #map, #fallback-map { position: relative; flex: 1 1 auto; inset: auto; }
+
+  #filters { max-height: none; }
+}
+
+@media (min-width: 1280px) {
+  #panel { flex-basis: 440px; }
+}
+
+/* Respect reduced-motion preferences for the sheet animation. */
+@media (prefers-reduced-motion: reduce) {
+  #panel { transition: none; }
+}

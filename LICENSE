@@ -1,0 +1,62 @@
+MIT License
+
+Copyright (c) 2026 ev-charge-map-au contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+IMPORTANT: THIS LICENCE COVERS THE CODE ONLY, NOT THE DATA
+================================================================================
+
+The MIT licence above applies to the source code in this repository.
+
+It does NOT apply to:
+
+  1. The cached upstream data in data/raw/, which remains under the licence of
+     each publisher (ODbL 1.0 for OpenStreetMap; CC-BY 3.0 AU for Transport for
+     NSW; CC-BY 4.0 for Victoria DEECA, QLD Transport and Main Roads, the
+     Australian Capital Territory, and the State of Tasmania). This includes data/raw/geocode-cache.json,
+     whose coordinates are Nominatim/OpenStreetMap-derived and therefore ODbL.
+
+  2. The dataset this software produces (data/cache/dataset.json and the
+     exports derived from it). Because that dataset incorporates OpenStreetMap
+     data into a new database, it is a Derivative Database under the Open
+     Database Licence 1.0, and ODbL share-alike applies to it:
+
+         https://opendatacommons.org/licenses/odbl/1-0/
+
+     If you publicly convey that database, or any Derivative Database of it,
+     you must keep it under the ODbL and attribute the sources. Run
+     `evmap export --format odbl --out <dir>/` to produce a compliant bundle.
+
+  3. The vendored copy of Leaflet in web/vendor/, which is distributed under
+     its own BSD-2-Clause licence, Copyright (c) 2010-2024 Volodymyr Agafonkin,
+     Copyright (c) 2010-2011 CloudMade.
+
+Required attribution when redistributing the data:
+
+  © OpenStreetMap contributors (ODbL 1.0)
+  © State of New South Wales (Transport for NSW) (CC-BY 3.0 AU)
+  © State of Victoria (Department of Energy, Environment and Climate Action) (CC-BY 4.0)
+  © State of Queensland (Department of Transport and Main Roads) (CC-BY 4.0)
+  © Australian Capital Territory (CC-BY 4.0)
+  © State of Tasmania (Department of Natural Resources and Environment) (CC-BY 4.0)
+  Geocoding © OpenStreetMap contributors (Nominatim) (ODbL 1.0)
+
+See docs/DATA_SOURCES.md for the full licence analysis.

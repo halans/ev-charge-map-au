@@ -1,0 +1,5294 @@
+{
+  "startedAt": "2026-09-05T21:29:49.254Z",
+  "finishedAt": "2026-09-05T21:30:14.336Z",
+  "durationMs": 25082,
+  "offline": false,
+  "sources": [
+    {
+      "sourceId": "osm",
+      "name": "OpenStreetMap (Overpass API)",
+      "jurisdiction": "AU (national)",
+      "licence": "ODbL 1.0",
+      "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "shareAlike": true,
+      "homepage": "https://www.openstreetmap.org/",
+      "changeCadence": "continuous",
+      "recommendedRefresh": "daily",
+      "coverageCaveat": null,
+      "recordCount": 1593,
+      "issueCount": 0,
+      "issueRate": 0,
+      "structuralIssueCount": 0,
+      "structuralIssueRate": 0,
+      "issueKinds": {},
+      "plannedCount": 4,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "osm-au-chargers.json",
+          "url": "https://overpass-api.de/api/interpreter",
+          "fetchedAt": "2026-09-05T21:30:08.683Z",
+          "sha256": "fa7980633393628c3f4df01781c080831d7ac1a8005b3d1647fd5b5902c5fdc6",
+          "bytes": 564142,
+          "previousSha256": "fe18f689caea28755c23b6af2fd270cc61b141d28a14e6596f4c9121c538a872",
+          "previousBytes": 564142,
+          "changed": true
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:08.683Z",
+      "servedFrom": "https://overpass-api.de/api/interpreter",
+      "geocoding": null,
+      "staleFallback": false
+    },
+    {
+      "sourceId": "nsw",
+      "name": "Transport for NSW — EV Charging Locations",
+      "jurisdiction": "NSW",
+      "licence": "CC-BY 3.0 AU",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0/au/",
+      "attribution": "© State of New South Wales (Transport for NSW)",
+      "shareAlike": false,
+      "homepage": "https://opendata.transport.nsw.gov.au/data/dataset/electric-vehicle-charging-stations-nsw",
+      "changeCadence": "periodic (observed months between republications)",
+      "recommendedRefresh": "weekly",
+      "coverageCaveat": null,
+      "recordCount": 1958,
+      "issueCount": 620,
+      "issueRate": 0.3166,
+      "structuralIssueCount": 0,
+      "structuralIssueRate": 0,
+      "issueKinds": {
+        "data_gap": 522,
+        "status_flag": 98
+      },
+      "plannedCount": 98,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "nsw-package.json",
+          "url": "https://opendata.transport.nsw.gov.au/data/api/3/action/package_show?id=be1c4de4-4517-4bd0-8a09-2965ddfc7179",
+          "fetchedAt": "2026-09-05T21:30:08.854Z",
+          "sha256": "9f8e4e2533386d85b74e5969e0feaf29a9788db8052195d2d458e973fc158904",
+          "bytes": 7413,
+          "previousSha256": "9f8e4e2533386d85b74e5969e0feaf29a9788db8052195d2d458e973fc158904",
+          "previousBytes": 7413,
+          "changed": false
+        },
+        {
+          "key": "nsw-ev.csv",
+          "url": "https://opendata.transport.nsw.gov.au/data/dataset/be1c4de4-4517-4bd0-8a09-2965ddfc7179/resource/7bbb6461-e52d-4fe7-ace4-a15c30198de0/download/ev_20251216.csv",
+          "fetchedAt": "2026-09-05T21:30:09.032Z",
+          "sha256": "42397310a4118b44f8b292cfff487c518e01859d1b695e5565047e2063c8239e",
+          "bytes": 283030,
+          "previousSha256": "42397310a4118b44f8b292cfff487c518e01859d1b695e5565047e2063c8239e",
+          "previousBytes": 283030,
+          "changed": false
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:08.854Z",
+      "servedFrom": "https://opendata.transport.nsw.gov.au/data/dataset/be1c4de4-4517-4bd0-8a09-2965ddfc7179/resource/7bbb6461-e52d-4fe7-ace4-a15c30198de0/download/ev_20251216.csv",
+      "geocoding": null,
+      "staleFallback": false
+    },
+    {
+      "sourceId": "vic",
+      "name": "Victoria DEECA — Government Funded Public EV Chargers",
+      "jurisdiction": "VIC",
+      "licence": "CC-BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "© State of Victoria (Department of Energy, Environment and Climate Action)",
+      "shareAlike": false,
+      "homepage": "https://discover.data.vic.gov.au/dataset/government-funded-public-ev-chargers",
+      "changeCadence": "monthly",
+      "recommendedRefresh": "weekly",
+      "coverageCaveat": "Government-funded chargers only — not a complete Victorian inventory.",
+      "recordCount": 152,
+      "issueCount": 11,
+      "issueRate": 0.0724,
+      "structuralIssueCount": 0,
+      "structuralIssueRate": 0,
+      "issueKinds": {
+        "status_flag": 11
+      },
+      "plannedCount": 11,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "vic-dcav.json",
+          "url": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Adcav_site&outputFormat=application%2Fjson",
+          "fetchedAt": "2026-09-05T21:30:09.286Z",
+          "sha256": "599af8433d42aff64e72a701928c514a63080193ed1defcbd7bee718cb9ee686",
+          "bytes": 108744,
+          "previousSha256": "c834faa9edcb8ce97665336a279a1a36f86689bdb1615a1585a5eaabb8e7ad46",
+          "previousBytes": 108744,
+          "changed": true
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:09.286Z",
+      "servedFrom": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform%3Adcav_site&outputFormat=application%2Fjson",
+      "geocoding": null,
+      "staleFallback": false
+    },
+    {
+      "sourceId": "qld",
+      "name": "QLD Transport and Main Roads — Find a charging station (QESH)",
+      "jurisdiction": "QLD",
+      "licence": "CC-BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "© State of Queensland (Department of Transport and Main Roads)",
+      "shareAlike": false,
+      "homepage": "https://data.gov.au/data/dataset/find-a-charging-station-electric-vehicle",
+      "changeCadence": "infrequent",
+      "recommendedRefresh": "weekly",
+      "coverageCaveat": "Queensland Electric Super Highway sites only — not a complete QLD inventory.",
+      "recordCount": 17,
+      "issueCount": 17,
+      "issueRate": 1,
+      "structuralIssueCount": 0,
+      "structuralIssueRate": 0,
+      "issueKinds": {
+        "data_gap": 17
+      },
+      "plannedCount": 0,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "qld-ev.csv",
+          "url": "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/findachargingev/csl_ev.csv",
+          "fetchedAt": "2026-09-05T21:30:09.400Z",
+          "sha256": "6bee7c7e9c902f80724adbf5e9d9167dd8294ae46ee09d6b5acdc3c595294b6a",
+          "bytes": 3798,
+          "previousSha256": "6bee7c7e9c902f80724adbf5e9d9167dd8294ae46ee09d6b5acdc3c595294b6a",
+          "previousBytes": 3798,
+          "changed": false
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:09.400Z",
+      "servedFrom": "https://www.tmr.qld.gov.au/-/media/aboutus/corpinfo/Open%20data/findachargingev/csl_ev.csv",
+      "geocoding": null,
+      "staleFallback": false
+    },
+    {
+      "sourceId": "act",
+      "name": "ACT Government — Public EV chargers (Climate Choices)",
+      "jurisdiction": "ACT",
+      "licence": "CC-BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "© Australian Capital Territory",
+      "shareAlike": false,
+      "homepage": "https://www.climatechoices.act.gov.au/transport-and-travel/zero-emissions-vehicles/public-ev-chargers-in-the-act",
+      "changeCadence": "infrequent (page edited as grants are delivered)",
+      "recommendedRefresh": "weekly",
+      "coverageCaveat": "ACT Government-funded chargers only (131 bays). The page states 300+ public bays exist territory-wide, so this is roughly 44% of ACT public charging.",
+      "recordCount": 34,
+      "issueCount": 35,
+      "issueRate": 1.0294,
+      "structuralIssueCount": 1,
+      "structuralIssueRate": 0.0294,
+      "issueKinds": {
+        "status_flag": 34,
+        "rejected": 1
+      },
+      "plannedCount": 0,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "act-chargers.html",
+          "url": "https://www.climatechoices.act.gov.au/transport-and-travel/zero-emissions-vehicles/public-ev-chargers-in-the-act",
+          "fetchedAt": "2026-09-05T21:30:10.246Z",
+          "sha256": "a57b605adf07d9b7b98c0301375c7340a5179e3e882b28c0b562df9f8f6f400a",
+          "bytes": 159031,
+          "previousSha256": "856ee73ccb5db447b6f91cc47aadbac6d842cbaeb96a9c0f5f7faad7eed04090",
+          "previousBytes": 159034,
+          "changed": true
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:10.246Z",
+      "servedFrom": "https://www.climatechoices.act.gov.au/transport-and-travel/zero-emissions-vehicles/public-ev-chargers-in-the-act",
+      "geocoding": {
+        "requested": 35,
+        "fromCache": 35,
+        "fetched": 0,
+        "failed": 1,
+        "skippedOffline": 0
+      },
+      "staleFallback": false
+    },
+    {
+      "sourceId": "tas",
+      "name": "Tasmania NRE — Electric Vehicle ChargeSmart Grants",
+      "jurisdiction": "TAS",
+      "licence": "CC-BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "© State of Tasmania (Department of Natural Resources and Environment)",
+      "shareAlike": false,
+      "homepage": "https://nre.tas.gov.au/environment/climate-change/climate-change-grant-programs/electric-vehicle-chargesmart-grants",
+      "changeCadence": "per grant round (years apart)",
+      "recommendedRefresh": "monthly",
+      "coverageCaveat": "ChargeSmart grant recipients only, located to TOWN level with no street address. Excluded from the default map view; not a charger location.",
+      "recordCount": 55,
+      "issueCount": 111,
+      "issueRate": 2.0182,
+      "structuralIssueCount": 0,
+      "structuralIssueRate": 0,
+      "issueKinds": {
+        "data_gap": 56,
+        "status_flag": 55
+      },
+      "plannedCount": 0,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "tas-chargesmart.html",
+          "url": "https://nre.tas.gov.au/environment/climate-change/climate-change-grant-programs/electric-vehicle-chargesmart-grants",
+          "fetchedAt": "2026-09-05T21:30:10.977Z",
+          "sha256": "178b5442bfd7dc8f6ee134c2d710ee5e066227fccf01da4aeb1d6544cccd94ba",
+          "bytes": 333367,
+          "previousSha256": "32a64b8a10384fe5f2385aceca3f619a80d437e945636f637efee8aa54530b35",
+          "previousBytes": 333367,
+          "changed": true
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:10.977Z",
+      "servedFrom": "https://nre.tas.gov.au/environment/climate-change/climate-change-grant-programs/electric-vehicle-chargesmart-grants",
+      "geocoding": {
+        "requested": 42,
+        "fromCache": 42,
+        "fetched": 0,
+        "failed": 0,
+        "skippedOffline": 0
+      },
+      "staleFallback": false
+    },
+    {
+      "sourceId": "ocm",
+      "name": "Open Charge Map (open-licensed subset)",
+      "jurisdiction": "AU (national)",
+      "licence": "CC-BY 4.0 (user-contributed); per-provider for imported records",
+      "licenceUrl": "https://openchargemap.io/about/terms",
+      "attribution": "Data © Open Charge Map contributors and listed Data Providers",
+      "shareAlike": false,
+      "homepage": "https://openchargemap.org/",
+      "changeCadence": "continuous",
+      "recommendedRefresh": "daily",
+      "coverageCaveat": "Only records the provider has flagged as open-licensed (opendata=true); a subset of OCM.",
+      "recordCount": 1359,
+      "issueCount": 1,
+      "issueRate": 0.0007,
+      "structuralIssueCount": 1,
+      "structuralIssueRate": 0.0007,
+      "issueKinds": {
+        "rejected": 1
+      },
+      "plannedCount": 15,
+      "error": null,
+      "skipped": false,
+      "fetch": [
+        {
+          "key": "ocm-au.json",
+          "url": "https://api.openchargemap.io/v3/poi?output=json&countrycode=AU&opendata=true&maxresults=10000&compact=false&verbose=false&key=REDACTED",
+          "fetchedAt": "2026-09-05T21:30:14.216Z",
+          "sha256": "18d14de616b7b278c74bcca61e4f896fc1d698be0deeb03421c20ed04b81ecf5",
+          "bytes": 5622037,
+          "previousSha256": null,
+          "previousBytes": null,
+          "changed": true
+        }
+      ],
+      "fetchedAt": "2026-09-05T21:30:14.216Z",
+      "servedFrom": "https://api.openchargemap.io/v3/poi?output=json&countrycode=AU&opendata=true&maxresults=10000&compact=false&verbose=false&key=REDACTED",
+      "geocoding": null,
+      "staleFallback": false
+    }
+  ],
+  "resolution": {
+    "inputRecords": 5168,
+    "rejectedInvalidCoords": 0,
+    "sites": 3905,
+    "merged": 1263,
+    "multiSourceSites": 779,
+    "sitesWithConflicts": 812,
+    "pairsConsidered": 4969,
+    "links": 1625,
+    "collisionsResolved": 6
+  },
+  "coverage": {
+    "sites": 3905,
+    "mappableSites": 3850,
+    "approximateSites": 55,
+    "estimatedPlugs": 10980,
+    "byState": {
+      "NT": 29,
+      "WA": 436,
+      "QLD": 327,
+      "SA": 182,
+      "NSW": 1972,
+      "VIC": 695,
+      "ACT": 89,
+      "TAS": 175
+    },
+    "byPrecision": {
+      "surveyed": 3820,
+      "geocoded_address": 30,
+      "geocoded_locality": 55
+    },
+    "byStatus": {
+      "operational": 3689,
+      "unknown": 92,
+      "planned": 124
+    },
+    "bySpeed": {
+      "slow": 1132,
+      "fast": 731,
+      "trickle": 139,
+      "unknown": 1320,
+      "rapid": 265,
+      "ultra": 203,
+      "medium": 115
+    },
+    "bySourceCount": {
+      "1": 3126,
+      "2": 591,
+      "3": 188
+    },
+    "topOperators": [
+      {
+        "operator": "Chargefox",
+        "count": 629
+      },
+      {
+        "operator": "Tesla",
+        "count": 446
+      },
+      {
+        "operator": "Non-networked",
+        "count": 432
+      },
+      {
+        "operator": "Exploren",
+        "count": 340
+      },
+      {
+        "operator": "Evie Networks",
+        "count": 333
+      },
+      {
+        "operator": "unknown",
+        "count": 194
+      },
+      {
+        "operator": "NRMA",
+        "count": 139
+      },
+      {
+        "operator": "PLUS ES",
+        "count": 106
+      },
+      {
+        "operator": "EVX",
+        "count": 103
+      },
+      {
+        "operator": "(Business Owner at Location)",
+        "count": 99
+      },
+      {
+        "operator": "BP Pulse",
+        "count": 97
+      },
+      {
+        "operator": "Ampol",
+        "count": 90
+      },
+      {
+        "operator": "JOLT",
+        "count": 83
+      },
+      {
+        "operator": "Yurika",
+        "count": 50
+      },
+      {
+        "operator": "Queensland Electric Super Highway",
+        "count": 41
+      },
+      {
+        "operator": "EVUp",
+        "count": 40
+      },
+      {
+        "operator": "Everty",
+        "count": 34
+      },
+      {
+        "operator": "Central Victorian Greenhouse Alliance",
+        "count": 34
+      },
+      {
+        "operator": "Electric Highway Tasmania",
+        "count": 32
+      },
+      {
+        "operator": "ChargePoint",
+        "count": 31
+      }
+    ],
+    "completeness": {
+      "withName": 0.7275,
+      "withPower": 0.662,
+      "withConnectors": 0.8853
+    }
+  },
+  "geocoding": {
+    "perSource": {
+      "act": {
+        "requested": 35,
+        "fromCache": 35,
+        "fetched": 0,
+        "failed": 1,
+        "skippedOffline": 0
+      },
+      "tas": {
+        "requested": 42,
+        "fromCache": 42,
+        "fetched": 0,
+        "failed": 0,
+        "skippedOffline": 0
+      }
+    },
+    "cache": {
+      "total": 77,
+      "resolved": 76,
+      "unresolved": 1
+    }
+  },
+  "issues": [
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5ece9271:100",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8099a7cf:118",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d155b08c:152",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1debaf3a:414",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d51c6f8f:530",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a9b63e5c:604",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:38b4d2b1:691",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:975639e1:700",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b889ed86:775",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5a07b2b6:815",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c7ee5fcf:980",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ab9c42b0:981",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:955ca424:982",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:11",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:18",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:22",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:33",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:42",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:55",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:68",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:69",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:72",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:90",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:106",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:110",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:111",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:114",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:129",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:134",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:143",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:154",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:166",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:167",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:173",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:184",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:187",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:188",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:189",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:196",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:203",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:206",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:238",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:256",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:263",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:266",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:268",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:279",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:293",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:297",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:305",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:312",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:322",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:326",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:332",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:339",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:360",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:362",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:370",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:376",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:383",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:403",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:413",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:414",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:420",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:427",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:432",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:436",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:439",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:445",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:450",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:459",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:463",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:469",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:484",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:496",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:501",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:512",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:518",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:531",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:538",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:539",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:550",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:554",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:555",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:566",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:573",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:575",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:591",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:597",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:602",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:632",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:633",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:645",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:665",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:673",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:674",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:678",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:682",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:684",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:712",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:717",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:723",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:740",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:741",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:755",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:768",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:791",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:795",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:846",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:877",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "objectid:878",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (Charger_Type=Upcoming)"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f4ccd20e:1104",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:10aa8e90:1105",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6425cd9e:1106",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c18cc1b1:1107",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fe97f92b:1108",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dae71356:1109",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a870bdae:1110",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:44dfe90b:1111",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:80ff3354:1112",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5192df1f:1113",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:92a1334:1114",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fbded704:1115",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d8dbe7be:1116",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7b128a14:1117",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7da03ed7:1118",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:94f243f4:1119",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e2d0e6f1:1120",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c8cfe9ef:1121",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6f97e5ce:1122",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ebca8978:1123",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e7f4021e:1124",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8a97a7df:1125",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2ca409e3:1126",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:732a7349:1127",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7df0eeb6:1128",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:81a9fdf7:1129",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:507da997:1130",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b6501a53:1131",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5ecf8f7a:1132",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cba38012:1133",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a211be78:1134",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b890bfb2:1135",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6f2f4ed7:1136",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c47f268:1137",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3915d4f9:1138",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c384e049:1139",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5bdc90a6:1140",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3986744e:1141",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:79dfd789:1142",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eb2ef0e3:1143",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2c31bb76:1144",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:61133cb7:1145",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:75dd8c20:1146",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:37c67154:1147",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b2db05dd:1148",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6a13562a:1149",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b1f640c5:1150",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b79aa265:1151",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b7ae414a:1152",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7d0cfc73:1153",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f5f4b173:1154",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ca223227:1155",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8fa3c92f:1156",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c133552c:1157",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9972d211:1158",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8865e391:1159",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b5ab9fb3:1160",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6f0be467:1161",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:564fb8e8:1162",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:35a101bd:1163",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fcbadfb0:1164",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:96c9cbf:1165",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3355af53:1166",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2604b0e4:1167",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c64eda4b:1168",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:10e87173:1169",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f821cbf1:1170",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:59655b25:1171",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6aa9f8ff:1172",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7a0486c2:1173",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:998b2870:1174",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f41e6357:1175",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:682b3746:1176",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8bfe5b5:1177",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:77cbe9fa:1178",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:613b485a:1179",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b1e2a790:1180",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1e22e446:1181",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:80d0a6c3:1182",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:95496e23:1183",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:441f466:1184",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:89c4cdb2:1185",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f9faeb91:1186",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e5fe4ced:1187",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e507293a:1188",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7cc7895a:1189",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:70c9f2a2:1190",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6cdc6ba8:1191",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3ba0dcc8:1192",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c3f6172d:1193",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2e1a74e4:1194",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eea3a8e5:1195",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a9f2a78c:1196",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:83294cd4:1197",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f3a91514:1198",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f82cdb0f:1199",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:972c3dcd:1200",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9a7b1a68:1201",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:48b76d3b:1202",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4793118f:1203",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9bf61e5d:1204",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c7b25bd4:1205",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:455b193c:1206",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fb89aaa8:1207",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:867aea9e:1208",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ff89ab9a:1209",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ced59470:1210",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a34c1866:1211",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:661aa950:1212",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:241c3ac0:1213",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6a510f9:1214",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:77f7a87a:1215",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fab6085d:1216",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c6b70c4a:1217",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2b1b7b15:1218",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:47ef7af4:1219",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:184f1117:1220",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1947f5d0:1221",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f8a99989:1222",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4387f162:1223",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bb4e0488:1224",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:28e6bb58:1225",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fd22f0c7:1226",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8a7bd60:1227",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3499b244:1228",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cad1f8a1:1229",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7ab0b093:1230",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a651da4f:1231",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8a8771e4:1232",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8b694737:1233",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5f42c15b:1234",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6bcd4360:1235",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:94cd1d83:1236",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:329d9232:1237",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:72fed641:1238",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6340c612:1239",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f15d9003:1240",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dfcc2b6:1241",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d4384c41:1242",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:beeee2dc:1243",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b9d6df64:1244",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7629cd4c:1245",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9f7f8c0c:1246",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f6fedbf3:1247",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:27d6e92f:1248",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f4597a04:1249",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9de90cda:1250",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7e5e05e9:1251",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c62a1fa7:1252",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:33d86fda:1253",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dddc0cc:1254",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:64abaaee:1255",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:371eae98:1256",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:13fd4f9f:1257",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:114003c5:1258",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d1c5f22d:1259",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5abd8770:1260",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2723d0db:1261",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9f506205:1262",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:65ceedb3:1263",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:184a31ee:1264",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7e3abfa2:1265",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a890a369:1266",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e487a8a4:1267",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8cf9c3c7:1268",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3dda5a38:1269",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:99ced8f3:1270",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6d69dc22:1271",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d1c816b3:1272",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5d9c55d5:1273",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ac64722a:1274",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:58ac77da:1275",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e53b4cc5:1276",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:99d213a:1277",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ad826770:1278",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:97117c94:1279",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:36197465:1280",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4a027798:1281",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:271cd8c7:1282",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7f69380:1283",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:612eba46:1284",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cb2f1e01:1285",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:32003cd3:1286",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d9f82ac8:1287",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6ed04b77:1288",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:560fd5dd:1289",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6b02c848:1290",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bf665951:1292",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:794ae48:1296",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:af8d8ac8:1299",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3865d5c8:1300",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3d623897:1304",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a3af7116:1306",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:85496926:1310",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7b75d904:1311",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:63889643:1313",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:45da27d2:1316",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a8f2fe44:1317",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:60239826:1319",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:db3b5de:1320",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:92daf4e3:1321",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:86e8e30a:1323",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3e394c7f:1326",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d0751f94:1330",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e9b6c115:1331",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c24ec5ce:1332",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:54254be0:1333",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:42bbbf21:1334",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:12222620:1339",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9b1bdad0:1340",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:19de189e:1341",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a36a9dd6:1342",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:57a4b9db:1345",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7db2fb97:1347",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1d150a64:1357",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bfbbfbab:1361",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:69d1098f:1363",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8f921afc:1364",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:35e2f888:1366",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5bc27359:1367",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:67c53e43:1368",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bf2b7abf:1370",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9e493ccc:1374",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3cd6b525:1375",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e7096d8e:1376",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2905166a:1377",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cbe68eb0:1378",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a5ea6654:1380",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3d040166:1381",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d9a0bde3:1382",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ebe30329:1383",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d92f3e07:1386",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:978ad14d:1387",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c63b9a3e:1390",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cbdf1cc0:1393",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fcf62080:1396",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6041e078:1397",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a6551837:1403",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5d2835f4:1406",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2e2302dd:1407",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2b4b534e:1409",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1623c56a:1410",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:95e15e6b:1411",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:14f0b6a9:1412",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fa330ffb:1413",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c390bd7a:1414",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:89d8a6a7:1415",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bf443a87:1416",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8e772f0c:1418",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fa11a107:1420",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:72cb29af:1421",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:47b35a1f:1422",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d91759a0:1423",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ffaf9918:1424",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:274e473e:1425",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:32a1c9de:1426",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:95099d45:1427",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7e580749:1433",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d9cec35b:1434",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7ebf5d6d:1442",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cb4c0530:1443",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6c1febc6:1448",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:deb974d5:1449",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:be6f0c75:1453",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fdf71b16:1454",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:730bd85d:1455",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1539c0b9:1456",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bea0d227:1460",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1f16babf:1461",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:21cd7d46:1462",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d2daae0e:1469",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fb3960f8:1470",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:650b3bc5:1471",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:43485e31:1476",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:626c4172:1477",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c779d12a:1478",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:88cddb68:1480",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9d7121a7:1481",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d7cb0b9c:1486",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5b864097:1487",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ca4e8be8:1493",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4c973838:1494",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d048b5eb:1495",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:516fc064:1496",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c2ec4897:1505",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d1b00c53:1507",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d5718715:1509",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4a6b84b9:1510",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:69a4fdf0:1513",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c6a909b4:1514",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:58b1cf48:1517",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dc4681c1:1519",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:30d12eec:1525",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9a25573e:1528",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:44005f80:1531",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8d2ce4af:1536",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7539ce5b:1537",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e1d6475b:1539",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e74d19bd:1540",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:16e0e550:1542",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d6a4a725:1544",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fdd165b5:1545",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:84cdc2f1:1548",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:baee423:1549",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7ec78141:1551",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:472716a4:1552",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ebc8f856:1554",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d400da5b:1555",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:80ebfe88:1557",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bd51e679:1558",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:969b3386:1559",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1d2d62e6:1560",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bd0affbc:1565",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:aadc21a7:1566",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e8a734d4:1568",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:472fb5d7:1569",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1f2da5f:1572",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3b571902:1574",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ffda7907:1575",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:49abc049:1577",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:430502ca:1584",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c715da8c:1588",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:50734f66:1589",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:87e9d08a:1590",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7cbf9a3b:1591",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c922c037:1592",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:663fc115:1594",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3dcaebb7:1596",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fc55fdc2:1597",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:472d8acb:1598",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:781a142b:1601",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d90603dd:1602",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bd2aa916:1603",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fdfb7135:1604",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3cfd6d05:1605",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:60d04490:1610",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:75698942:1611",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4d8adc4a:1613",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5abab868:1616",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:79ee8c24:1623",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5b06fd48:1624",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8554a532:1625",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4bf53343:1626",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fd090368:1629",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6c686a24:1631",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:434c9f3:1632",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:651530d1:1634",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9075dc40:1635",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c4ed2c18:1637",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9497b4b4:1640",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b47dbbc3:1648",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eeb19c9d:1653",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:59d36f8c:1654",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:391a0506:1655",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1daf2400:1657",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:31651204:1659",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2370d49e:1661",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:376ede9f:1662",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:322d0514:1666",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d2996a49:1667",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:14d80533:1669",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8d0656cf:1670",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:616cc972:1672",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ef81ad36:1673",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dea3d5bc:1674",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5bab5b2b:1675",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5c824571:1676",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ad3475d5:1680",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fba2cf48:1681",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:737198e9:1684",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ac252a75:1685",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d233bb3c:1686",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c7ee5fcf:1688",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:141383b1:1689",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cc27476:1690",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eaddddd5:1691",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:93ce952f:1697",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a9688978:1700",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:694e3390:1702",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f933218b:1704",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c8e55696:1705",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e8846632:1706",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d9a8f979:1708",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d1478ff8:1710",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6d6e47e6:1711",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:65f4e588:1712",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eb8fb3f8:1714",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:69171fe1:1719",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f3685065:1721",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a592877f:1729",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bfdf0b1d:1730",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c481e694:1732",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f6d45f20:1735",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6210fd9f:1738",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e9f21aca:1742",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3d1cf1e2:1744",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2a82944e:1745",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6b57da59:1748",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b98eec10:1749",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:dc28833:1750",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a8d30e11:1752",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2432ec27:1753",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c6c6268:1754",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1492ea9d:1755",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:51a05459:1757",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:cc8a9d5f:1759",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c52b7d17:1760",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:245dffe3:1761",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c3baea27:1762",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ceadcd2e:1764",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b3d7a5de:1765",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:242088a0:1767",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7c94b807:1771",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ce75f7ad:1772",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:bc56d542:1773",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:77b283d3:1774",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:fe485bab:1775",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1a933764:1777",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:556e28c9:1779",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:55d1b525:1780",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f4a2c87a:1781",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4ddc657e:1783",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7342ccc8:1784",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b1066d6f:1785",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3562b5e:1786",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4418d66b:1789",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4d0ddf44:1790",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:75f918ff:1791",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:70f9121d:1792",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1af0b3d3:1793",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:78f64968:1794",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b99abe9e:1796",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b517baf7:1797",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:85c3e103:1798",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:67da7ee3:1799",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a389f36:1800",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3a003e32:1801",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ce76f8b3:1802",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:9e26499:1803",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:6f3d397f:1804",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:eb251a3e:1806",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ceacfe45:1807",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:39f2e008:1808",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8f831b68:1809",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:d38588f9:1810",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1bfd5dba:1811",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:408939ce:1812",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f9d447de:1815",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2e150c59:1817",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5749053d:1818",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:1b4f0829:1819",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:889d63c3:1821",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:30f1e803:1825",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5fd75305:1826",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4d87ded5:1827",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c02e2fc3:1828",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3e26e881:1830",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b0866d28:1831",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a3a60d7d:1834",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7f4e6726:1836",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:c489febc:1837",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5c1f752f:1839",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:46cc1f27:1840",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:66561333:1845",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:785bc6be:1846",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b31b1c29:1848",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:acda40d3:1849",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:55221a48:1852",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:40a0c8b8:1853",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a15195fa:1858",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:20b39370:1860",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:705799c8:1861",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:82bef0a3:1862",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b7b87496:1863",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:aace1ccc:1864",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ceaaea3d:1868",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ac581185:1869",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b4e6228d:1870",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:57a6b18c:1871",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:b354ae61:1872",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5a57e7a1:1875",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:696346fd:1876",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:99e3b52b:1878",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f20b84ce:1879",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:4799395d:1880",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e83126f8:1881",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8129d84c:1883",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ce4c18f6:1887",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:7d5f7203:1888",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:30b62bb5:1893",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a7b00721:1899",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a5abce73:1900",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:553518a2:1904",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:26a3d026:1911",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:e5c86b19:1914",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a80b8ccf:1915",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:35b0d6e6:1916",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:5e446237:1917",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:a067fc69:1919",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:ed667650:1920",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:912687b4:1923",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:8fd37a65:1928",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3aba663f:1931",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:823747cc:1940",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:2fcce941:1941",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:12dcf377:1946",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:3e71440d:1947",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:f584a8a8:1949",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "nsw",
+      "sourceRecordId": "row:645f61a6:1957",
+      "kind": "data_gap",
+      "issue": "power: no rating (value was \"AC\")"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.40",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.70",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.144",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due November 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.944",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due November 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.546",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.544",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due November 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.1744",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.547",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.129",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due December 2026)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.1345",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due March 2027)"
+    },
+    {
+      "sourceId": "vic",
+      "sourceRecordId": "dcav:dcav_site.1344",
+      "kind": "status_flag",
+      "issue": "planned/unbuilt site (completion due March 2027)"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:gatton",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:cairns",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:rockhampton",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:coolangatta",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:brisbane",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:maryborough",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:childers",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:marlborough",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:mackay",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:bowen",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:tully",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:miriam-vale",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:carmila",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:townsville",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:toowoomba",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:cooroy",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "qld",
+      "sourceRecordId": "qesh:springfield",
+      "kind": "data_gap",
+      "issue": "plug count column empty"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:belconnen:sentinel-apartments",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:belconnen:raiders-belconnen",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:belconnen:jamison-plaza-jamison-centre",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:belconnen:kippax-fair-shopping-centre",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:gungahlin:amaroo-shops-amaroo-village-",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:gungahlin:raiders-club-gungahlin",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:gungahlin:casey-market-town",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:gungahlin:gungahlin-marketplace-gozzar",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:anu-fulton-muir-building",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:next-gen-canberra",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:coventry-apartments-wilson-c",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:australian-croatian-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:the-tradies-dickson",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:anu-school-of-art-design-rep",
+      "kind": "rejected",
+      "issue": "geocoding found no coordinate for \"ANU School of Art & Design Repertory Lane, ANU Acton Campus\""
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:hobart-place-carpark-hobart-",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:arte-braddon",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:watson-st",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:southwell-park",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:gordon-street",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-north:hillside-lane",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:eastlake-football-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:hotel-realm",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:royal-australian-mint",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:kingsborough-village-complex",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:harmonie-german-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:inner-south-east-c:manuka-shops",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:molonglo-weston-cr:raiders-club-weston",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:molonglo-weston-cr:canberra-irish-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:woden-valley:curtin-shops",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:woden-valley:woden-southern-cross-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:woden-valley:mawson-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:woden-valley:southlands-shopping-centre",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:tuggeranong:tuggeranong-southern-cross-c",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:tuggeranong:murrumbidgee-country-club",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "act",
+      "sourceRecordId": "act:tuggeranong:calwell-shopping-centre",
+      "kind": "status_flag",
+      "issue": "status unknown: the ACT page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:locationless",
+      "kind": "data_gap",
+      "issue": "35 grant rows (the 2018-19 round) publish no Location column — not ingested, because extracting a place from an organisation name is inference"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:bennett-s-petroleum-cambridge",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:bennett-s-petroleum-cambridge",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Cambridge\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-huonville",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-huonville",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Huonville\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-st-helens",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-st-helens",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"St Helens\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-prospect-vale",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-prospect-vale",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Prospect Vale\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-miena",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electric-highway-tasmania-miena",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Miena\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-port-arthur",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-port-arthur",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Port Arthur\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-bothwell",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-bothwell",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Bothwell\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-coles-bay",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-coles-bay",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Coles Bay\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-orford",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:electrona-pty-ltd-orford",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Orford\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:energy-roi-longford",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:energy-roi-longford",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Longford\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:onecare-shearwater",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:onecare-shearwater",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Shearwater\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:tipalea-partners-kingston",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:chargesmart-3-2025-s:tipalea-partners-kingston",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Kingston\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:central-highlands-tasmania-miena",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:central-highlands-tasmania-miena",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Miena\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:dorset-council-derby",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:dorset-council-derby",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Derby\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-dunalley",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-dunalley",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Dunalley\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-triabunna",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-triabunna",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Triabunna\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-ouse",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-ouse",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Ouse\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-fingal",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-fingal",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Fingal\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-exeter",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-exeter",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Exeter\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-cradle-mountai",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-cradle-mountai",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Cradle Mountain\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-smithton",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-smithton",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Smithton\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-waratah",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-waratah",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Waratah\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-maydena",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-maydena",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Maydena\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-tullah",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electric-highway-tasmania-tullah",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Tullah\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electrona-pty-ltd-bicheno",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:electrona-pty-ltd-bicheno",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Bicheno\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:energy-roi-george-town",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:energy-roi-george-town",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"George Town\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:energy-roi-strahan",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:energy-roi-strahan",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Strahan\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:huon-valley-council-cygnet",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:huon-valley-council-cygnet",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Cygnet\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:kentish-council-sheffield",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:kentish-council-sheffield",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Sheffield\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:southern-midlands-council-oatlands",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:southern-midlands-council-oatlands",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Oatlands\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:university-of-tasmania-burnie",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:university-of-tasmania-burnie",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Burnie\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:westminster-1257-pty-ltd-bruny-island",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:fast-charging-succes:westminster-1257-pty-ltd-bruny-island",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Bruny Island\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:auldington-hotel-launceston",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:auldington-hotel-launceston",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Launceston\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-cotta",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-cotta",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Richmond\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-house",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-house",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Richmond\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-villa",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:bridgecroft-accommodation-richmond-villa",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Richmond\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:burnie-city-council-marine-terrace-car-p",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:burnie-city-council-marine-terrace-car-p",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Burnie\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-cataract-gorge-west-l",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-cataract-gorge-west-l",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"West Launceston\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-lilydale-memorial-hal",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-lilydale-memorial-hal",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Lilydale\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-queen-victoria-museum",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-queen-victoria-museum",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Invermay\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-riverbend-park-launce",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:city-of-launceston-riverbend-park-launce",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Launceston\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:driftwood-accommodation-coles-bay",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:driftwood-accommodation-coles-bay",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Coles Bay\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:energy-roi-southport",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:energy-roi-southport",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Southport\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:ninch-cider-nubeena",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:ninch-cider-nubeena",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Nubeena\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:omaroo-cottage-bruny-island",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:omaroo-cottage-bruny-island",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Bruny Island\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:pier-hotel-george-town",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:pier-hotel-george-town",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"George Town\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:rowing-tasmania-inc-lake-barrington",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:rowing-tasmania-inc-lake-barrington",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Lake Barrington\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:stewarts-bay-lodge-two-chargers-port-art",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:stewarts-bay-lodge-two-chargers-port-art",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Port Arthur\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:storm-bay-bed-and-breakfast-white-beach",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:storm-bay-bed-and-breakfast-white-beach",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"White Beach\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:tas-electric-vehicles-two-chargers-launc",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:tas-electric-vehicles-two-chargers-launc",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Launceston\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:tasman-ecovillage-nubeena",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:tasman-ecovillage-nubeena",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Nubeena\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:the-truffledore-lower-barrington",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:the-truffledore-lower-barrington",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Lower Barrington\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:university-of-tasmania-north-west-campus",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:university-of-tasmania-north-west-campus",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Burnie\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:university-of-tasmania-northern-campus-i",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:university-of-tasmania-northern-campus-i",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Invermay\") — not a charger location"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:zeehan-bush-camp-zeehan",
+      "kind": "status_flag",
+      "issue": "status unknown: the page reports grant funding, not delivery"
+    },
+    {
+      "sourceId": "tas",
+      "sourceRecordId": "tas:destination-charging:zeehan-bush-camp-zeehan",
+      "kind": "data_gap",
+      "issue": "town-level position only (\"Zeehan\") — not a charger location"
+    },
+    {
+      "sourceId": "ocm",
+      "sourceRecordId": "ocm:189753",
+      "kind": "rejected",
+      "issue": "missing or invalid coordinates"
+    }
+  ],
+  "issueSummary": [
+    {
+      "issue": "nsw: power: no rating (value was \"…\")",
+      "count": 522
+    },
+    {
+      "issue": "nsw: planned/unbuilt site (Charger_Type=Upcoming)",
+      "count": 98
+    },
+    {
+      "issue": "tas: status unknown: the page reports grant funding, not delivery",
+      "count": 55
+    },
+    {
+      "issue": "tas: town-level position only (\"…\") — not a charger location",
+      "count": 55
+    },
+    {
+      "issue": "act: status unknown: the ACT page reports grant funding, not delivery",
+      "count": 34
+    },
+    {
+      "issue": "qld: plug count column empty",
+      "count": 17
+    },
+    {
+      "issue": "vic: planned/unbuilt site (completion due December 2026)",
+      "count": 6
+    },
+    {
+      "issue": "vic: planned/unbuilt site (completion due November 2026)",
+      "count": 3
+    },
+    {
+      "issue": "vic: planned/unbuilt site (completion due March 2027)",
+      "count": 2
+    },
+    {
+      "issue": "act: geocoding found no coordinate for \"…\"",
+      "count": 1
+    },
+    {
+      "issue": "tas: 35 grant rows (the 2018-19 round) publish no Location column — not ingested, because extracting a place from an organisation name is inference",
+      "count": 1
+    },
+    {
+      "issue": "ocm: missing or invalid coordinates",
+      "count": 1
+    }
+  ]
+}

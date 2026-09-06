@@ -1,0 +1,1008 @@
+{
+  "version": 1,
+  "entries": {
+    "1 brierly st weston act 2611 australia": {
+      "address": "1 Brierly St, Weston ACT 2611, Australia",
+      "queriedAt": "2026-09-05T12:05:21.896Z",
+      "attempted": [
+        "1 Brierly St, Weston ACT 2611, Australia, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3430831,
+        "lng": 149.0517612,
+        "displayName": "Brierly Street, Weston, District of Weston Creek, Australian Capital Territory, 2611, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "1 gordon st civic": {
+      "address": "1 Gordon St, Civic",
+      "queriedAt": "2026-09-05T12:05:12.738Z",
+      "attempted": [
+        "1 Gordon St, Civic, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2823629,
+        "lng": 149.1246697,
+        "displayName": "Gordon Street, City, Canberra, District of Canberra Central, Australian Capital Territory, 2601, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "1 riggall pl lyneham": {
+      "address": "1 Riggall Pl, Lyneham",
+      "queriedAt": "2026-09-05T12:04:59.671Z",
+      "attempted": [
+        "1 Riggall Pl, Lyneham, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2418293,
+        "lng": 149.1268271,
+        "displayName": "Exploren, 1, Riggall Place, Lyneham, North Canberra, District of Canberra Central, Australian Capital Territory, 2602, Australia",
+        "type": "amenity:charging_station"
+      }
+    },
+    "10 12 lonsdale st braddon": {
+      "address": "10/12 Lonsdale St, Braddon",
+      "queriedAt": "2026-09-05T12:05:08.528Z",
+      "attempted": [
+        "10/12 Lonsdale St, Braddon, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2706016,
+        "lng": 149.1331859,
+        "displayName": "Lonsdale Street, Braddon, North Canberra, District of Canberra Central, Australian Capital Territory, 2612, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "10 heard st mawson": {
+      "address": "10 Heard St, Mawson",
+      "queriedAt": "2026-09-05T12:05:26.241Z",
+      "attempted": [
+        "10 Heard St, Mawson, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3680618,
+        "lng": 149.0962838,
+        "displayName": "Heard Street, Mawson, District of Woden Valley, Australian Capital Territory, 2607, Australia",
+        "type": "highway:residential"
+      }
+    },
+    "10 mouat st lyneham": {
+      "address": "10 Mouat St, Lyneham",
+      "queriedAt": "2026-09-05T12:05:10.697Z",
+      "attempted": [
+        "10 Mouat St, Lyneham, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2479504,
+        "lng": 149.1312578,
+        "displayName": "Mouat Street, Lyneham, North Canberra, District of Canberra Central, Australian Capital Territory, 2602, Australia",
+        "type": "highway:primary"
+      }
+    },
+    "10 parbery lane kingston": {
+      "address": "10 Parbery Lane, Kingston",
+      "queriedAt": "2026-09-05T12:05:18.693Z",
+      "attempted": [
+        "10 Parbery Lane, Kingston, ACT, Australia",
+        "Kingston, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3152303,
+        "lng": 149.1465925,
+        "displayName": "Kingston, South Canberra, District of Canberra Central, Australian Capital Territory, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "12 challis street dickson": {
+      "address": "12 Challis Street Dickson",
+      "queriedAt": "2026-09-05T12:05:00.826Z",
+      "attempted": [
+        "12 Challis Street Dickson, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2531061,
+        "lng": 149.1349918,
+        "displayName": "Challis Street, Dickson, North Canberra, District of Canberra Central, Australian Capital Territory, 2602, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "12 heard st mawson": {
+      "address": "12 Heard St, Mawson",
+      "queriedAt": "2026-09-05T12:05:27.264Z",
+      "attempted": [
+        "12 Heard St, Mawson, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3680618,
+        "lng": 149.0962838,
+        "displayName": "Heard Street, Mawson, District of Woden Valley, Australian Capital Territory, 2607, Australia",
+        "type": "highway:residential"
+      }
+    },
+    "15 kingsland pd casey": {
+      "address": "15 Kingsland Pd, Casey",
+      "queriedAt": "2026-09-05T12:04:55.389Z",
+      "attempted": [
+        "15 Kingsland Pd, Casey, ACT, Australia",
+        "Casey, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.1670015,
+        "lng": 149.0947152,
+        "displayName": "Casey, District of Gungahlin, Australian Capital Territory, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "155 hardwick crescent holt": {
+      "address": "155 Hardwick Crescent, Holt",
+      "queriedAt": "2026-09-05T12:04:47.648Z",
+      "attempted": [
+        "155 Hardwick Crescent, Holt, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2201513,
+        "lng": 149.0189807,
+        "displayName": "Hardwick Crescent, Holt, District of Belconnen, Australian Capital Territory, 2615, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "161 kambah pool rd kambah": {
+      "address": "161 Kambah Pool Rd, Kambah",
+      "queriedAt": "2026-09-05T12:05:30.547Z",
+      "attempted": [
+        "161 Kambah Pool Rd, Kambah, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3900114,
+        "lng": 149.0299875,
+        "displayName": "Kambah Pool Road, Kambah, District of Tuggeranong, Australian Capital Territory, 2902, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "18 captain cook cres griffith": {
+      "address": "18 Captain Cook Cres, Griffith",
+      "queriedAt": "2026-09-05T12:05:21.068Z",
+      "attempted": [
+        "18 Captain Cook Cres, Griffith, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.331279,
+        "lng": 149.1384987,
+        "displayName": "Captain Cook Crescent, Manuka, Griffith, South Canberra, District of Canberra Central, Australian Capital Territory, 2603, Australia",
+        "type": "highway:secondary"
+      }
+    },
+    "2 24 ernest cavanagh st gungahlin": {
+      "address": "2/24 Ernest Cavanagh St, Gungahlin",
+      "queriedAt": "2026-09-05T12:04:53.093Z",
+      "attempted": [
+        "2/24 Ernest Cavanagh St, Gungahlin, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.1838737,
+        "lng": 149.1318059,
+        "displayName": "Ernest Cavanagh Street, Gungahlin, District of Gungahlin, Australian Capital Territory, 2912, Australia",
+        "type": "highway:residential"
+      }
+    },
+    "240 city walk civic": {
+      "address": "240 City Walk, Civic",
+      "queriedAt": "2026-09-05T12:05:13.040Z",
+      "attempted": [
+        "240 City Walk, Civic, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2808662,
+        "lng": 149.1325584,
+        "displayName": "240, City Walk, City, Canberra, District of Canberra Central, Australian Capital Territory, 2601, Australia",
+        "type": "place:house"
+      }
+    },
+    "2a badham st dickson": {
+      "address": "2A Badham St, Dickson",
+      "queriedAt": "2026-09-05T12:05:03.073Z",
+      "attempted": [
+        "2A Badham St, Dickson, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2506716,
+        "lng": 149.1377512,
+        "displayName": "Badham Street, Dickson Shops, Dickson, North Canberra, District of Canberra Central, Australian Capital Territory, 2602, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "3 oxley st griffith": {
+      "address": "3 Oxley St, Griffith",
+      "queriedAt": "2026-09-05T12:05:14.016Z",
+      "attempted": [
+        "3 Oxley St, Griffith, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3195678,
+        "lng": 149.1390877,
+        "displayName": "East Lakes Football Club, 3, Oxley Street, Manuka, Griffith, South Canberra, District of Canberra Central, Australian Capital Territory, 2603, Australia",
+        "type": "building:retail"
+      }
+    },
+    "34 watson st turner": {
+      "address": "34 Watson St, Turner",
+      "queriedAt": "2026-09-05T12:05:09.935Z",
+      "attempted": [
+        "34 Watson St, Turner, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2752231,
+        "lng": 149.1257567,
+        "displayName": "Watson Street, Turner, North Canberra, District of Canberra Central, Australian Capital Territory, 2612, Australia",
+        "type": "highway:residential"
+      }
+    },
+    "39 benjamin way belconnen": {
+      "address": "39 Benjamin Way, Belconnen",
+      "queriedAt": "2026-09-05T12:04:46.491Z",
+      "attempted": [
+        "39 Benjamin Way, Belconnen, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.23952,
+        "lng": 149.0678152,
+        "displayName": "Pho Hub, 39, Benjamin Way, Belconnen, District of Belconnen, Australian Capital Territory, 2617, Australia",
+        "type": "amenity:restaurant"
+      }
+    },
+    "481 hardwick cres holt": {
+      "address": "481 Hardwick Cres, Holt",
+      "queriedAt": "2026-09-05T12:04:49.975Z",
+      "attempted": [
+        "481 Hardwick Cres, Holt, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2201513,
+        "lng": 149.0189807,
+        "displayName": "Hardwick Crescent, Holt, District of Belconnen, Australian Capital Territory, 2615, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "49 jerrabomberra ave narrabundah": {
+      "address": "49 Jerrabomberra Ave, Narrabundah",
+      "queriedAt": "2026-09-05T12:05:19.725Z",
+      "attempted": [
+        "49 Jerrabomberra Ave, Narrabundah, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3367242,
+        "lng": 149.1488766,
+        "displayName": "Jerrabomberra Avenue, Narrabundah, Canberra, District of Canberra Central, Australian Capital Territory, 2604, Australia",
+        "type": "highway:secondary"
+      }
+    },
+    "51 curtin pl curtin": {
+      "address": "51 Curtin Pl, Curtin",
+      "queriedAt": "2026-09-05T12:05:24.102Z",
+      "attempted": [
+        "51 Curtin Pl, Curtin, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3256607,
+        "lng": 149.0823996,
+        "displayName": "Coles, 51, Curtin Place, Curtin Shops, Curtin, District of Woden Valley, Australian Capital Territory, 2605, Australia",
+        "type": "shop:supermarket"
+      }
+    },
+    "6 burbury close barton": {
+      "address": "6 Burbury Close, Barton",
+      "queriedAt": "2026-09-05T12:05:15.237Z",
+      "attempted": [
+        "6 Burbury Close, Barton, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3124235,
+        "lng": 149.1332608,
+        "displayName": "Burbury Close, Barton, South Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+        "type": "highway:residential"
+      }
+    },
+    "6 parkinson st weston": {
+      "address": "6 Parkinson St, Weston",
+      "queriedAt": "2026-09-05T12:05:22.964Z",
+      "attempted": [
+        "6 Parkinson St, Weston, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3431904,
+        "lng": 149.0561388,
+        "displayName": "Canberra Irish Club, 6, Parkinson Street, Weston, District of Weston Creek, Australian Capital Territory, 2611, Australia",
+        "type": "amenity:pub"
+      }
+    },
+    "62 114 denison street deakin": {
+      "address": "62-114 Denison Street Deakin",
+      "queriedAt": "2026-09-05T12:05:16.382Z",
+      "attempted": [
+        "62-114 Denison Street Deakin, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3152195,
+        "lng": 149.0967516,
+        "displayName": "Denison Street, Deakin, Canberra, District of Canberra Central, Australian Capital Territory, 2600, Australia",
+        "type": "highway:tertiary"
+      }
+    },
+    "68 mccaughey st turner": {
+      "address": "68 McCaughey St, Turner",
+      "queriedAt": "2026-09-05T12:05:01.783Z",
+      "attempted": [
+        "68 McCaughey St, Turner, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2660586,
+        "lng": 149.1230532,
+        "displayName": "McCaughey Street, Turner, North Canberra, District of Canberra Central, Australian Capital Territory, 2612, Australia",
+        "type": "highway:tertiary"
+      }
+    },
+    "9 webber crescent calwell": {
+      "address": "9 Webber Crescent, Calwell",
+      "queriedAt": "2026-09-05T12:05:31.778Z",
+      "attempted": [
+        "9 Webber Crescent, Calwell, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.435172,
+        "lng": 149.1126724,
+        "displayName": "Webber Crescent, Calwell, District of Tuggeranong, Australian Capital Territory, 2905, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "92 96 corinna st phillip": {
+      "address": "92-96 Corinna St, Phillip",
+      "queriedAt": "2026-09-05T12:05:25.014Z",
+      "attempted": [
+        "92-96 Corinna St, Phillip, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.3459117,
+        "lng": 149.0841973,
+        "displayName": "Corinna Street, Phillip, District of Woden Valley, Australian Capital Territory, 2606, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "95 daley rd acton": {
+      "address": "95 Daley Rd, Acton",
+      "queriedAt": "2026-09-05T12:04:58.669Z",
+      "attempted": [
+        "95 Daley Rd, Acton, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2790163,
+        "lng": 149.1151064,
+        "displayName": "Daley Road, Yukeembruk Village, Acton, Canberra, District of Canberra Central, Australian Capital Territory, 2601, Australia",
+        "type": "highway:unclassified"
+      }
+    },
+    "amaroo shops amaroo village shopping centre amaroo": {
+      "address": "Amaroo Shops Amaroo Village Shopping Centre, Amaroo",
+      "queriedAt": "2026-09-05T12:04:51.984Z",
+      "attempted": [
+        "Amaroo Shops Amaroo Village Shopping Centre, Amaroo, ACT, Australia",
+        "Amaroo, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.169587,
+        "lng": 149.1280212,
+        "displayName": "Amaroo, District of Gungahlin, Australian Capital Territory, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "anu school of art design repertory lane anu acton campus": {
+      "address": "ANU School of Art & Design Repertory Lane, ANU Acton Campus",
+      "queriedAt": "2026-09-05T12:05:05.062Z",
+      "attempted": [
+        "ANU School of Art & Design Repertory Lane, ANU Acton Campus, ACT, Australia",
+        "ANU Acton Campus, ACT, Australia"
+      ],
+      "result": null
+    },
+    "bicheno": {
+      "address": "Bicheno",
+      "queriedAt": "2026-09-05T12:26:36.888Z",
+      "attempted": [
+        "Bicheno, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.8748974,
+        "lng": 148.3038105,
+        "displayName": "Bicheno, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "bothwell": {
+      "address": "Bothwell",
+      "queriedAt": "2026-09-05T12:26:18.367Z",
+      "attempted": [
+        "Bothwell, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.3848997,
+        "lng": 147.0074135,
+        "displayName": "Bothwell, Tasmania, 7030, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "bruny island": {
+      "address": "Bruny Island",
+      "queriedAt": "2026-09-05T12:26:44.773Z",
+      "attempted": [
+        "Bruny Island, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.2898931,
+        "lng": 147.2890738,
+        "displayName": "Bruny Island, Alonnah, Tasmania, 7150, Australia",
+        "type": "place:island"
+      }
+    },
+    "burnie": {
+      "address": "Burnie",
+      "queriedAt": "2026-09-05T12:26:43.759Z",
+      "attempted": [
+        "Burnie, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.0523688,
+        "lng": 145.9064073,
+        "displayName": "Burnie, Tasmania, 7320, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "cambridge": {
+      "address": "Cambridge",
+      "queriedAt": "2026-09-05T12:26:11.809Z",
+      "attempted": [
+        "Cambridge, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.8338257,
+        "lng": 147.4486122,
+        "displayName": "Cambridge, Tasmania, 7170, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "coles bay": {
+      "address": "Coles Bay",
+      "queriedAt": "2026-09-05T12:26:19.330Z",
+      "attempted": [
+        "Coles Bay, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.125218,
+        "lng": 148.2885381,
+        "displayName": "Coles Bay, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "cradle mountain": {
+      "address": "Cradle Mountain",
+      "queriedAt": "2026-09-05T12:26:31.419Z",
+      "attempted": [
+        "Cradle Mountain, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.6846445,
+        "lng": 145.9513044,
+        "displayName": "Cradle Mountain, Tasmania, Australia",
+        "type": "natural:peak"
+      }
+    },
+    "cygnet": {
+      "address": "Cygnet",
+      "queriedAt": "2026-09-05T12:26:40.370Z",
+      "attempted": [
+        "Cygnet, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.1614161,
+        "lng": 147.0757606,
+        "displayName": "Cygnet, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "derby": {
+      "address": "Derby",
+      "queriedAt": "2026-09-05T12:26:24.908Z",
+      "attempted": [
+        "Derby, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.149041,
+        "lng": 147.8009475,
+        "displayName": "Derby, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "dunalley": {
+      "address": "Dunalley",
+      "queriedAt": "2026-09-05T12:26:26.027Z",
+      "attempted": [
+        "Dunalley, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.8898228,
+        "lng": 147.8045263,
+        "displayName": "Dunalley, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "exeter": {
+      "address": "Exeter",
+      "queriedAt": "2026-09-05T12:26:30.551Z",
+      "attempted": [
+        "Exeter, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.298969,
+        "lng": 146.9532465,
+        "displayName": "Exeter, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "fingal": {
+      "address": "Fingal",
+      "queriedAt": "2026-09-05T12:26:29.414Z",
+      "attempted": [
+        "Fingal, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.63984,
+        "lng": 147.969899,
+        "displayName": "Fingal, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "george town": {
+      "address": "George Town",
+      "queriedAt": "2026-09-05T12:26:38.213Z",
+      "attempted": [
+        "George Town, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.1050157,
+        "lng": 146.8238459,
+        "displayName": "George Town, Tasmania, 7253, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "gungahlin marketplace gozzard st gungahlin": {
+      "address": "Gungahlin Marketplace Gozzard St, Gungahlin",
+      "queriedAt": "2026-09-05T12:04:57.595Z",
+      "attempted": [
+        "Gungahlin Marketplace Gozzard St, Gungahlin, ACT, Australia",
+        "Gungahlin, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.1788782,
+        "lng": 149.123653,
+        "displayName": "District of Gungahlin, Australian Capital Territory, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "hobart place carpark hobart place civic": {
+      "address": "Hobart Place carpark Hobart Place, Civic",
+      "queriedAt": "2026-09-05T12:05:07.478Z",
+      "attempted": [
+        "Hobart Place carpark Hobart Place, Civic, ACT, Australia",
+        "Civic, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2812678,
+        "lng": 149.1291868,
+        "displayName": "City, Canberra, District of Canberra Central, Australian Capital Territory, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "huonville": {
+      "address": "Huonville",
+      "queriedAt": "2026-09-05T12:26:12.881Z",
+      "attempted": [
+        "Huonville, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.0301719,
+        "lng": 147.0494659,
+        "displayName": "Huonville, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "invermay": {
+      "address": "Invermay",
+      "queriedAt": "2026-09-05T12:26:50.084Z",
+      "attempted": [
+        "Invermay, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4221595,
+        "lng": 147.1359349,
+        "displayName": "Invermay, Launceston, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "jamison plaza jamison centre macquarie": {
+      "address": "Jamison Plaza Jamison Centre, Macquarie",
+      "queriedAt": "2026-09-05T12:04:48.727Z",
+      "attempted": [
+        "Jamison Plaza Jamison Centre, Macquarie, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.2528047,
+        "lng": 149.071448,
+        "displayName": "Jamison Plaza, Jamison Centre, Macquarie, District of Belconnen, Australian Capital Territory, 2614, Australia",
+        "type": "shop:mall"
+      }
+    },
+    "kingston": {
+      "address": "Kingston",
+      "queriedAt": "2026-09-05T12:26:23.986Z",
+      "attempted": [
+        "Kingston, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.9749818,
+        "lng": 147.308221,
+        "displayName": "Kingston, Tasmania, 7050, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "lake barrington": {
+      "address": "Lake Barrington",
+      "queriedAt": "2026-09-05T12:26:53.605Z",
+      "attempted": [
+        "Lake Barrington, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4088374,
+        "lng": 146.1903702,
+        "displayName": "Lake Barrington, Wilmot, Tasmania, 7310, Australia",
+        "type": "water:reservoir"
+      }
+    },
+    "launceston": {
+      "address": "Launceston",
+      "queriedAt": "2026-09-05T12:26:45.789Z",
+      "attempted": [
+        "Launceston, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4340813,
+        "lng": 147.1373496,
+        "displayName": "Launceston, Tasmania, Australia",
+        "type": "place:city"
+      }
+    },
+    "lilydale": {
+      "address": "Lilydale",
+      "queriedAt": "2026-09-05T12:26:49.045Z",
+      "attempted": [
+        "Lilydale, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.2511216,
+        "lng": 147.2156269,
+        "displayName": "Lilydale, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "longford": {
+      "address": "Longford",
+      "queriedAt": "2026-09-05T12:26:21.742Z",
+      "attempted": [
+        "Longford, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.5936936,
+        "lng": 147.1215353,
+        "displayName": "Longford, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "lower barrington": {
+      "address": "Lower Barrington",
+      "queriedAt": "2026-09-05T12:26:55.827Z",
+      "attempted": [
+        "Lower Barrington, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.2922731,
+        "lng": 146.2894761,
+        "displayName": "Lower Barrington, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "maydena": {
+      "address": "Maydena",
+      "queriedAt": "2026-09-05T12:26:34.834Z",
+      "attempted": [
+        "Maydena, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.7559574,
+        "lng": 146.6261634,
+        "displayName": "Maydena, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "miena": {
+      "address": "Miena",
+      "queriedAt": "2026-09-05T12:26:15.957Z",
+      "attempted": [
+        "Miena, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.9916452,
+        "lng": 146.7075939,
+        "displayName": "Miena, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "nubeena": {
+      "address": "Nubeena",
+      "queriedAt": "2026-09-05T12:26:52.477Z",
+      "attempted": [
+        "Nubeena, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.0988259,
+        "lng": 147.7422938,
+        "displayName": "Nubeena, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "oatlands": {
+      "address": "Oatlands",
+      "queriedAt": "2026-09-05T12:26:42.388Z",
+      "attempted": [
+        "Oatlands, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.3018682,
+        "lng": 147.3728654,
+        "displayName": "Oatlands, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "orford": {
+      "address": "Orford",
+      "queriedAt": "2026-09-05T12:26:20.519Z",
+      "attempted": [
+        "Orford, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.5606598,
+        "lng": 147.8719857,
+        "displayName": "Orford, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "ouse": {
+      "address": "Ouse",
+      "queriedAt": "2026-09-05T12:26:28.101Z",
+      "attempted": [
+        "Ouse, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.4847142,
+        "lng": 146.7109583,
+        "displayName": "Ouse, Tasmania, 7140, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "port arthur": {
+      "address": "Port Arthur",
+      "queriedAt": "2026-09-05T12:26:17.288Z",
+      "attempted": [
+        "Port Arthur, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.1435301,
+        "lng": 147.8440404,
+        "displayName": "Port Arthur, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "prospect vale": {
+      "address": "Prospect Vale",
+      "queriedAt": "2026-09-05T12:26:15.216Z",
+      "attempted": [
+        "Prospect Vale, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4821578,
+        "lng": 147.1246959,
+        "displayName": "Prospect Vale, Launceston, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "richmond": {
+      "address": "Richmond",
+      "queriedAt": "2026-09-05T12:26:47.109Z",
+      "attempted": [
+        "Richmond, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.7352717,
+        "lng": 147.4384546,
+        "displayName": "Richmond, Tasmania, 7025, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "shearwater": {
+      "address": "Shearwater",
+      "queriedAt": "2026-09-05T12:26:22.803Z",
+      "attempted": [
+        "Shearwater, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.1596503,
+        "lng": 146.5399417,
+        "displayName": "Shearwater, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "sheffield": {
+      "address": "Sheffield",
+      "queriedAt": "2026-09-05T12:26:41.512Z",
+      "attempted": [
+        "Sheffield, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.3818415,
+        "lng": 146.3271826,
+        "displayName": "Sheffield, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "smithton": {
+      "address": "Smithton",
+      "queriedAt": "2026-09-05T12:26:32.669Z",
+      "attempted": [
+        "Smithton, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -40.8415455,
+        "lng": 145.1282245,
+        "displayName": "Smithton, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "southport": {
+      "address": "Southport",
+      "queriedAt": "2026-09-05T12:26:51.443Z",
+      "attempted": [
+        "Southport, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.4306374,
+        "lng": 146.9754021,
+        "displayName": "Southport, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "st helens": {
+      "address": "St Helens",
+      "queriedAt": "2026-09-05T12:26:14.011Z",
+      "attempted": [
+        "St Helens, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.3236306,
+        "lng": 148.2493858,
+        "displayName": "St Helens, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "strahan": {
+      "address": "Strahan",
+      "queriedAt": "2026-09-05T12:26:39.273Z",
+      "attempted": [
+        "Strahan, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.1525389,
+        "lng": 145.3282194,
+        "displayName": "Strahan, Tasmania, 7468, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "triabunna": {
+      "address": "Triabunna",
+      "queriedAt": "2026-09-05T12:26:27.126Z",
+      "attempted": [
+        "Triabunna, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -42.504035,
+        "lng": 147.9139308,
+        "displayName": "Triabunna, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "tuggeranong southern cross club cnr pitman holwell st greenway": {
+      "address": "Tuggeranong Southern Cross Club Cnr Pitman &, Holwell St, Greenway",
+      "queriedAt": "2026-09-05T12:05:29.608Z",
+      "attempted": [
+        "Tuggeranong Southern Cross Club Cnr Pitman &, Holwell St, Greenway, ACT, Australia",
+        "Greenway, ACT, Australia"
+      ],
+      "result": {
+        "lat": -35.4158082,
+        "lng": 149.0648149,
+        "displayName": "Greenway, District of Tuggeranong, Australian Capital Territory, 2900, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "tullah": {
+      "address": "Tullah",
+      "queriedAt": "2026-09-05T12:26:35.835Z",
+      "attempted": [
+        "Tullah, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.73752,
+        "lng": 145.6162835,
+        "displayName": "Tullah, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "waratah": {
+      "address": "Waratah",
+      "queriedAt": "2026-09-05T12:26:33.771Z",
+      "attempted": [
+        "Waratah, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4447702,
+        "lng": 145.5321884,
+        "displayName": "Waratah, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "west launceston": {
+      "address": "West Launceston",
+      "queriedAt": "2026-09-05T12:26:48.141Z",
+      "attempted": [
+        "West Launceston, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.4476833,
+        "lng": 147.1289875,
+        "displayName": "West Launceston, Launceston, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "white beach": {
+      "address": "White Beach",
+      "queriedAt": "2026-09-05T12:26:54.556Z",
+      "attempted": [
+        "White Beach, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -43.12488,
+        "lng": 147.72121,
+        "displayName": "White Beach, Tasmania, 7184, Australia",
+        "type": "boundary:administrative"
+      }
+    },
+    "zeehan": {
+      "address": "Zeehan",
+      "queriedAt": "2026-09-05T12:26:56.887Z",
+      "attempted": [
+        "Zeehan, Tasmania, Australia"
+      ],
+      "result": {
+        "lat": -41.883943,
+        "lng": 145.3357269,
+        "displayName": "Zeehan, Tasmania, Australia",
+        "type": "boundary:administrative"
+      }
+    }
+  }
+}
