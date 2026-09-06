@@ -372,6 +372,7 @@
     renderMarkers(result.results);
     renderList(result);
     renderFilterCount();
+    updateHash();
   }
 
   function renderList(result) {
@@ -451,11 +452,17 @@
 
   function selectSite(id, opts) {
     opts = opts || {};
-    state.selectedId = id;
     // Use the shared engine's lookup rather than filtering SITES here, so
     // all site access goes through core (see test/equivalence.test.js).
     var site = search.byId(SITES, id);
-    if (!site) return;
+    if (!site) {
+      // A stale or mistyped deep link (?#site=... for a site that no longer
+      // exists) must not leave the URL pointing at a detail view that never
+      // actually rendered.
+      state.selectedId = null;
+      return;
+    }
+    state.selectedId = id;
 
     if (opts.pan !== false && map && !tilesFailed) {
       map.setView([site.lat, site.lng], Math.max(map.getZoom(), 14), { animate: true });
@@ -463,6 +470,7 @@
     renderDetail(site);
     renderMarkers(state.lastResults);
     setPanelState('expanded');
+    updateHash();
   }
 
   function renderDetail(s) {
@@ -830,6 +838,92 @@
     return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
+  /* ---------------- deep linking ---------------- */
+
+  /**
+   * The URL hash mirrors the parts of state worth sharing or bookmarking:
+   * search text, filters and the selected site. Deliberately excludes
+   * state.centre — a "near me" geolocation is personal and ephemeral, not
+   * something that belongs baked into a link someone else opens.
+   */
+  function encodeHash() {
+    var parts = [];
+    function add(key, value) {
+      if (value !== null && value !== undefined && value !== '' && value !== false) {
+        parts.push(key + '=' + encodeURIComponent(value));
+      }
+    }
+    add('site', state.selectedId);
+    add('q', state.text);
+    add('state', state.state);
+    add('connector', state.connector);
+    add('operator', state.operator);
+    add('minKw', state.minPowerKw);
+    add('corroborated', state.corroboratedOnly ? '1' : null);
+    add('planned', state.includePlanned ? '1' : null);
+    add('approx', state.includeApproximate ? '1' : null);
+    return parts.join('&');
+  }
+
+  /** Rewrite the URL to match current state, without adding a history entry. */
+  function updateHash() {
+    var hash = encodeHash();
+    var url = location.pathname + location.search + (hash ? '#' + hash : '');
+    history.replaceState(null, '', url);
+  }
+
+  function parseHash() {
+    var raw = location.hash.replace(/^#/, '');
+    var out = {};
+    if (!raw) return out;
+    raw.split('&').forEach(function (pair) {
+      var eq = pair.indexOf('=');
+      if (eq === -1) return;
+      out[pair.slice(0, eq)] = decodeURIComponent(pair.slice(eq + 1));
+    });
+    return out;
+  }
+
+  /**
+   * Apply a parsed hash to state and the matching form controls. Always a
+   * full reset-then-apply, not a patch — used both before the first render
+   * and on hashchange (browser back/forward), where a field missing from
+   * the new hash must actually clear, not leave the previous value stuck.
+   * Returns the parsed hash so boot() can act on `site` separately, once
+   * there is a result set for it to select into.
+   */
+  function applyHashState() {
+    var h = parseHash();
+
+    state.text = h.q || '';
+    el['q'].value = state.text;
+
+    state.state = h.state || null;
+    el['f-state'].value = state.state || '';
+
+    state.connector = h.connector || null;
+    el['f-connector'].value = state.connector || '';
+
+    // Only reflected in the dropdown if it made the top-40 list (see
+    // initControls) — the filter still applies either way.
+    state.operator = h.operator || null;
+    el['f-operator'].value = state.operator || '';
+
+    state.minPowerKw = h.minKw ? Number(h.minKw) : null;
+    el['f-power'].value = h.minKw || '';
+
+    state.corroboratedOnly = !!h.corroborated;
+    el['f-corroborated'].checked = state.corroboratedOnly;
+
+    state.includePlanned = !!h.planned;
+    el['f-planned'].checked = state.includePlanned;
+
+    state.includeApproximate = !!h.approx;
+    el['f-approximate'].checked = state.includeApproximate;
+
+    return h;
+  }
+
   /* ---------------- boot ---------------- */
 
   function boot() {
@@ -844,7 +938,27 @@
     initSheet();
     initControls();
     initAbout();
+    // Apply any ?#q=...&state=...&site=... before the first render, so the
+    // initial query already reflects a shared/bookmarked link instead of
+    // flashing the default view first.
+    var hashState = applyHashState();
     render();
+    if (hashState.site) selectSite(hashState.site);
+
+    // Back/forward between hash states (e.g. after following a link, then
+    // hitting back) should restore the map to match, not leave it stuck on
+    // whatever was on screen when the user navigated away.
+    window.addEventListener('hashchange', function () {
+      var h = applyHashState();
+      if (h.site) {
+        render();      // refresh the filtered set behind the detail view first
+        selectSite(h.site);
+      } else if (state.selectedId) {
+        closeDetail(); // clears selectedId, restores the list, and re-renders
+      } else {
+        render();
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
