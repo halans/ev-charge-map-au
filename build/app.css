@@ -95,7 +95,10 @@ html, body {
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-text strong { font-size: 14px; letter-spacing: -0.01em; }
+/* h1, not <strong>: this is the page's one real heading — a crawler with no
+   JS still sees a title, a description and a meaningful h1 above the fold,
+   even though everything below is client-rendered from the embedded dataset. */
+.brand-text h1 { margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
 .brand-sub { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .06em; }
 
 /* The brand text is noise on a narrow phone; the mark carries the identity. */

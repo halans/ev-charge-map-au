@@ -5,7 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Australian EV Charger Map — open data</title>
 <meta name="description" content="Every public EV charging site in Australia that appears in openly-licensed data, reconciled from OpenStreetMap and state government datasets.">
+<meta name="robots" content="index, follow">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171a21" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico">
+<!-- Open Graph / Twitter: no og:url — this page is a template meant to be
+     self-hosted at any domain, so there is no single canonical address. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EV Chargers AU">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Australian EV Charger Map — open data">
+<meta property="og:description" content="Every public EV charging site in Australia that appears in openly-licensed data, reconciled from OpenStreetMap and state government datasets.">
+<meta property="og:image" content="og_default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Australian EV Charger Map — open data">
+<meta name="twitter:description" content="Every public EV charging site in Australia that appears in openly-licensed data, reconciled from OpenStreetMap and state government datasets.">
+<meta name="twitter:image" content="og_default.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Australian EV Charger Map — open data","description":"Every public EV charging site in Australia that appears in openly-licensed data, reconciled from OpenStreetMap and state government datasets.","dateModified":"2026-09-06T01:41:21.233Z","inLanguage":"en-AU","spatialCoverage":{"@type":"Place","name":"Australia"},"keywords":["EV charging","electric vehicle charging","Australia","open data","EV charger map"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"sites.json"}]}</script>
 <style>
 /* ===== vendored Leaflet 1.9.4 ===== */
 /* required styles */
@@ -770,7 +787,10 @@ html, body {
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-text strong { font-size: 14px; letter-spacing: -0.01em; }
+/* h1, not <strong>: this is the page's one real heading — a crawler with no
+   JS still sees a title, a description and a meaningful h1 above the fold,
+   even though everything below is client-rendered from the embedded dataset. */
+.brand-text h1 { margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
 .brand-sub { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .06em; }
 
 /* The brand text is noise on a narrow phone; the mark carries the identity. */
@@ -1191,7 +1211,7 @@ details.detail-section[open] > summary { margin-bottom: 8px; }
     <div class="brand">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
-        <strong>EV Chargers AU</strong>
+        <h1>EV Chargers AU</h1>
         <span class="brand-sub">open data only</span>
       </span>
     </div>

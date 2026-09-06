@@ -168,14 +168,55 @@ function renderHtml({ dataset, coreBundle, leafletJs, leafletCss }) {
   const appScript = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
   const appStyles = fs.readFileSync(path.join(__dirname, 'app.css'), 'utf8');
 
+  const pageTitle = 'Australian EV Charger Map — open data';
+  const pageDescription =
+    'Every public EV charging site in Australia that appears in openly-licensed data, ' +
+    'reconciled from OpenStreetMap and state government datasets.';
+
+  /**
+   * schema.org Dataset markup, for Google Dataset Search and similar indexes.
+   * Deliberately omits `license` (a single URL would misrepresent a dataset
+   * that mixes ODbL and several CC-BY variants per source — see meta.sources
+   * for the real per-source licence) and any fixed `url`/`creator`, since this
+   * page is a template anyone can self-host at their own domain.
+   */
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: pageTitle,
+    description: pageDescription,
+    dateModified: dataset.generatedAt,
+    inLanguage: 'en-AU',
+    spatialCoverage: { '@type': 'Place', name: 'Australia' },
+    keywords: ['EV charging', 'electric vehicle charging', 'Australia', 'open data', 'EV charger map'],
+    distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: 'sites.json' }],
+  };
+
   return `<!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Australian EV Charger Map — open data</title>
-<meta name="description" content="Every public EV charging site in Australia that appears in openly-licensed data, reconciled from OpenStreetMap and state government datasets.">
+<title>${pageTitle}</title>
+<meta name="description" content="${pageDescription}">
+<meta name="robots" content="index, follow">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171a21" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico">
+<!-- Open Graph / Twitter: no og:url — this page is a template meant to be
+     self-hosted at any domain, so there is no single canonical address. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EV Chargers AU">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="${pageTitle}">
+<meta property="og:description" content="${pageDescription}">
+<meta property="og:image" content="ev-life.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${pageTitle}">
+<meta name="twitter:description" content="${pageDescription}">
+<meta name="twitter:image" content="ev-life.jpg">
+<script type="application/ld+json">${safeJson(structuredData)}</script>
 <style>
 /* ===== vendored Leaflet 1.9.4 ===== */
 ${leafletCss}
@@ -191,7 +232,7 @@ ${appStyles}
     <div class="brand">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
-        <strong>EV Chargers AU</strong>
+        <h1>EV Chargers AU</h1>
         <span class="brand-sub">open data only</span>
       </span>
     </div>
