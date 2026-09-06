@@ -107,26 +107,58 @@ function syntheticId(row, index) {
 }
 
 /**
+ * Highest power any practical AC charger delivers, in kW.
+ *
+ * Single-phase AC tops out around 7 kW and three-phase around 22 kW; 43 kW
+ * exists but is rare and effectively the ceiling. Anything above this is DC by
+ * physics, whatever the source says.
+ */
+const AC_CEILING_KW = 43;
+
+/**
  * Build connectors from the NSW Charger_Type + Charger_rating pair.
  * NSW does not publish connector standards, only AC/DC and a rating, so we
  * emit an unspecified-standard connector rather than inventing CCS2.
+ *
+ * REGRESSION GUARD: `Charger_Type` is not always AC or DC. 98 rows carry
+ * "Upcoming" in that column instead, and two of those state a rating of
+ * "2x350kW & 2x175kW" with the operator truncated to "PLUS ES Manag".
+ *
+ * The original implementation treated anything that was not literally "DC" as
+ * AC, which labelled those two sites as 350 kW **AC** connectors — physically
+ * impossible, and visible in the data as a kerbside AC network apparently
+ * operating ultra-rapid chargers. When the stated current type is unusable,
+ * infer it from the power instead, and emit nothing rather than guessing when
+ * the power cannot settle it either.
  */
 function connectorsFromRow(row) {
   const typeRaw = String(row.Charger_Type || '').trim();
   const parsed = nrm.parsePowerRating(row.Charger_rating);
-  const isDc = /^dc$/i.test(typeRaw);
-  const standard = isDc ? nrm.CONNECTORS.DC_UNSPECIFIED : nrm.CONNECTORS.AC_UNSPECIFIED;
+  const statedAc = /^ac$/i.test(typeRaw);
+  const statedDc = /^dc$/i.test(typeRaw);
+
+  /** @returns {string|null} the canonical standard, or null if undecidable */
+  const standardFor = (kw) => {
+    if (statedDc) return nrm.CONNECTORS.DC_UNSPECIFIED;
+    if (statedAc) return nrm.CONNECTORS.AC_UNSPECIFIED;
+    // Type not stated usefully (e.g. "Upcoming"): let the power decide.
+    if (Number.isFinite(kw) && kw > AC_CEILING_KW) return nrm.CONNECTORS.DC_UNSPECIFIED;
+    return null; // genuinely unknown — do not guess
+  };
 
   if (parsed.groups.length) {
-    return parsed.groups.map((g) => ({ standard, count: g.count, powerKw: g.kw }));
+    return parsed.groups
+      .map((g) => ({ standard: standardFor(g.kw), count: g.count, powerKw: g.kw }))
+      .filter((c) => c.standard !== null);
   }
+
   // No parseable rating: still record that a connector of this current type
   // exists, with unknown power. Losing the row entirely would be worse.
-  if (/^(ac|dc)$/i.test(typeRaw)) {
+  if (statedAc || statedDc) {
     const plugs = /^\d+$/.test(String(row.Number_of_plugs || '').trim())
       ? parseInt(row.Number_of_plugs, 10)
       : null;
-    return [{ standard, count: plugs, powerKw: null }];
+    return [{ standard: standardFor(null), count: plugs, powerKw: null }];
   }
   return [];
 }
@@ -221,4 +253,4 @@ function normalise(raw, ctx = {}) {
   return { records, issues };
 }
 
-module.exports = { id, meta, requests, normalise, syntheticId, connectorsFromRow, PACKAGE_ID };
+module.exports = { id, meta, requests, normalise, syntheticId, connectorsFromRow, AC_CEILING_KW, PACKAGE_ID };

@@ -367,8 +367,12 @@ openchargemap.org, then:
 
 ```bash
 export OCM_API_KEY=your-key-here
-node bin/evmap.js ingest --sources osm,nsw,vic,qld,ocm
+node bin/evmap.js ingest --sources osm,nsw,vic,qld,act,tas,ocm
 ```
+
+`--sources` replaces the default list rather than adding to it, so `act` and
+`tas` must be listed explicitly too — leaving them out silently drops those
+two sources from the run.
 
 The adapter pins `opendata=true` and drops any record whose provider is not
 flagged open-licensed. **Do not remove that filter** — unfiltered OCM mixes

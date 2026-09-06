@@ -204,6 +204,51 @@ module.exports = function run() {
       assert.atLeast(withPower.length, 900);
     });
 
+    it('REGRESSION: does not label a 350kW charger as AC when the type says "Upcoming"', () => {
+      // Charger_Type is not always AC or DC — 98 rows say "Upcoming". Treating
+      // anything non-DC as AC gave two PLUS ES sites 350kW *AC* connectors,
+      // which is physically impossible (AC tops out near 43kW).
+      const c = nsw.connectorsFromRow({
+        Charger_Type: 'Upcoming',
+        Charger_rating: '2x350kW & 2x175kW',
+        Number_of_plugs: '5',
+      });
+      assert.equal(c.length, 2);
+      assert.ok(
+        c.every((x) => x.standard === nrmCore.CONNECTORS.DC_UNSPECIFIED),
+        'power above the AC ceiling must be treated as DC'
+      );
+    });
+
+    it('emits no connector when neither the type nor the power can settle it', () => {
+      // "Upcoming" + 22kW could be AC or DC; guessing either would be invention.
+      assert.deepEqual(
+        nsw.connectorsFromRow({ Charger_Type: 'Upcoming', Charger_rating: '22 kW' }),
+        []
+      );
+    });
+
+    it('still honours an explicitly stated current type', () => {
+      assert.equal(
+        nsw.connectorsFromRow({ Charger_Type: 'AC', Charger_rating: '22 kW' })[0].standard,
+        nrmCore.CONNECTORS.AC_UNSPECIFIED
+      );
+      assert.equal(
+        nsw.connectorsFromRow({ Charger_Type: 'DC', Charger_rating: '350 kW' })[0].standard,
+        nrmCore.CONNECTORS.DC_UNSPECIFIED
+      );
+    });
+
+    it('no site anywhere claims AC above the physical ceiling', () => {
+      // A whole-dataset invariant, not just a unit case.
+      const bad = records.filter((r) =>
+        (r.connectors || []).some(
+          (c) => c.standard === nrmCore.CONNECTORS.AC_UNSPECIFIED && c.powerKw > nsw.AC_CEILING_KW
+        )
+      );
+      assert.equal(bad.length, 0, `${bad.length} sites claim impossible AC power`);
+    });
+
     it('never marks a fee as free, since NSW publishes no fee field', () => {
       assert.ok(records.every((r) => r.fee === null), 'fee must stay unknown');
     });
