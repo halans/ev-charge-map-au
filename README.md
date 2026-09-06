@@ -42,6 +42,11 @@ node test/run.js
 # Or fetch fresh data from all six sources:
 node bin/evmap.js ingest
 
+# To also pull in Open Charge Map (a 7th source, off by default — needs a
+# free API key from openchargemap.org; see "The data sources" below):
+export OCM_API_KEY=your-key-here
+node bin/evmap.js ingest --sources osm,nsw,vic,qld,act,tas,ocm
+
 # Serve the map and API:
 node bin/evmap.js serve
 # -> http://127.0.0.1:8787

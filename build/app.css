@@ -292,7 +292,7 @@ button { font-family: inherit; font-size: 13px; }
 /* Literal, not var(--slow): the map marker's fill colour is a fixed hex in
    app.js (it draws canvas pins, not themed DOM), and --slow is redefined for
    light mode. The swatch must track the actual pin colour, not the theme. */
-.swatch.slow    { background: #8b94a5; }
+.swatch.slow    { background: #6b7280; }
 .swatch.planned { background: transparent; border-style: dashed; border-color: var(--warn); }
 .swatch.approx  { background: transparent; border-style: dashed; border-color: var(--approx); }
 
