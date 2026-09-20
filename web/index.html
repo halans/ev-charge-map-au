@@ -711,9 +711,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
   --danger: #e5534b;
   --ultra: #b06cf5;
   --rapid: #35d07f;
-  --fast: #4aa8f0;
+  --fast: #14b8a6;
   --slow: #8b94a5;
   --approx: #6b3fb5;
+  --me: #4aa8f0; /* "you are here" marker — kept distinct from every charger colour above */
   --radius: 10px;
   --topbar-h: 56px;
   --footer-h: 34px;
@@ -822,13 +823,13 @@ html, body {
 .me-dot {
   position: absolute; top: 50%; left: 50%;
   width: 12px; height: 12px; margin: -6px 0 0 -6px;
-  background: #35d07f; border: 2px solid #fff; border-radius: 50%;
+  background: var(--me); border: 2px solid #fff; border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
 }
 .me-pulse {
   position: absolute; top: 50%; left: 50%;
   width: 18px; height: 18px; margin: -9px 0 0 -9px;
-  background: #35d07f; border-radius: 50%; opacity: 0.55;
+  background: var(--me); border-radius: 50%; opacity: 0.55;
   animation: me-pulse 2s ease-out infinite;
 }
 @keyframes me-pulse {
@@ -2612,7 +2613,9 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     updateMapHint(thinned, display.length, sites.length);
 
     var colours = {
-      ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
+      // fast/medium is teal, not blue — blue is reserved for the "you are
+      // here" marker (see showMeMarker) so the two never look alike.
+      ultra: '#b06cf5', rapid: '#35d07f', fast: '#14b8a6', medium: '#14b8a6',
       // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
       // roughly 2.7:1 contrast against the light OSM basemap, well under the
       // 3:1 minimum for graphical objects, so slow/unknown-power sites (the
@@ -2706,11 +2709,10 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     meMarker.addTo(map);
 
     meCircle = L.circle([lat, lng], {
-      // Matches the "selected charger" accent used elsewhere on the canvas
-      // renderer (see the circleMarker color above) — Leaflet's canvas path
+      // Same light blue as --me / .me-dot in app.css — Leaflet's canvas path
       // styling needs a literal colour, not a CSS custom property.
       radius: NEARBY_RADIUS_M,
-      color: '#35d07f',
+      color: '#4aa8f0',
       weight: 1.5,
       dashArray: '4,6',
       fill: false,
@@ -2805,7 +2807,9 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     ctx.fillText('Map tiles unavailable — offline plot of ' + sites.length + ' sites', pad, pad + 4);
 
     var colours = {
-      ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
+      // fast/medium is teal, not blue — blue is reserved for the "you are
+      // here" marker (see showMeMarker) so the two never look alike.
+      ultra: '#b06cf5', rapid: '#35d07f', fast: '#14b8a6', medium: '#14b8a6',
       // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
       // roughly 2.7:1 contrast against the light OSM basemap, well under the
       // 3:1 minimum for graphical objects, so slow/unknown-power sites (the

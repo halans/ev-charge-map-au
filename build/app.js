@@ -149,7 +149,9 @@
     updateMapHint(thinned, display.length, sites.length);
 
     var colours = {
-      ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
+      // fast/medium is teal, not blue — blue is reserved for the "you are
+      // here" marker (see showMeMarker) so the two never look alike.
+      ultra: '#b06cf5', rapid: '#35d07f', fast: '#14b8a6', medium: '#14b8a6',
       // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
       // roughly 2.7:1 contrast against the light OSM basemap, well under the
       // 3:1 minimum for graphical objects, so slow/unknown-power sites (the
@@ -243,11 +245,10 @@
     meMarker.addTo(map);
 
     meCircle = L.circle([lat, lng], {
-      // Matches the "selected charger" accent used elsewhere on the canvas
-      // renderer (see the circleMarker color above) — Leaflet's canvas path
+      // Same light blue as --me / .me-dot in app.css — Leaflet's canvas path
       // styling needs a literal colour, not a CSS custom property.
       radius: NEARBY_RADIUS_M,
-      color: '#35d07f',
+      color: '#4aa8f0',
       weight: 1.5,
       dashArray: '4,6',
       fill: false,
@@ -342,7 +343,9 @@
     ctx.fillText('Map tiles unavailable — offline plot of ' + sites.length + ' sites', pad, pad + 4);
 
     var colours = {
-      ultra: '#b06cf5', rapid: '#35d07f', fast: '#4aa8f0', medium: '#4aa8f0',
+      // fast/medium is teal, not blue — blue is reserved for the "you are
+      // here" marker (see showMeMarker) so the two never look alike.
+      ultra: '#b06cf5', rapid: '#35d07f', fast: '#14b8a6', medium: '#14b8a6',
       // Darker than the app's dim-grey chrome (#8b94a5): that colour reads at
       // roughly 2.7:1 contrast against the light OSM basemap, well under the
       // 3:1 minimum for graphical objects, so slow/unknown-power sites (the
