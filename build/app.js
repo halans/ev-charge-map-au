@@ -48,6 +48,9 @@
   var tilesFailed = false;
   var CLUSTER_PIXEL_RADIUS = 70; // target on-screen radius for a grouped cell, in CSS px
   var CLUSTER_MIN_SITES = 40;    // below this, bucketing has nothing worth merging anyway
+  var NEARBY_RADIUS_M = 25000;   // "near me" zoom-to-fit radius
+  var meMarker = null;    // "you are here" dot — lives outside markerLayer so
+  var meCircle = null;    // it survives the clearLayers() on every render()
 
   function initMap() {
     map = L.map('map', {
@@ -212,6 +215,44 @@
     });
 
     if (tilesFailed) drawFallbackMap(display.map(function (item) { return item.site; }));
+  }
+
+  /**
+   * Drop (or move) the "you are here" dot and its faint 25km reference ring.
+   * Added straight to the map rather than markerLayer, which is wiped and
+   * rebuilt on every render() — this marker has to survive panning/zooming.
+   */
+  function showMeMarker(lat, lng) {
+    if (meMarker) {
+      meMarker.setLatLng([lat, lng]);
+      meCircle.setLatLng([lat, lng]);
+      return;
+    }
+    meMarker = L.marker([lat, lng], {
+      icon: L.divIcon({
+        className: '',
+        html: '<div class="me-marker"><div class="me-pulse"></div><div class="me-dot"></div></div>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+      }),
+      keyboard: false,
+      zIndexOffset: 1000,
+    });
+    meMarker.bindTooltip('You are here', { direction: 'top', offset: [0, -9] });
+    meMarker.addTo(map);
+
+    meCircle = L.circle([lat, lng], {
+      // Matches the "selected charger" accent used elsewhere on the canvas
+      // renderer (see the circleMarker color above) — Leaflet's canvas path
+      // styling needs a literal colour, not a CSS custom property.
+      radius: NEARBY_RADIUS_M,
+      color: '#35d07f',
+      weight: 1.5,
+      dashArray: '4,6',
+      fill: false,
+      interactive: false,
+    });
+    meCircle.addTo(map);
   }
 
   /**
@@ -743,7 +784,10 @@
       navigator.geolocation.getCurrentPosition(
         function (pos) {
           state.centre = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-          if (map && !tilesFailed) map.setView([state.centre.lat, state.centre.lng], 11);
+          if (map && !tilesFailed) {
+            showMeMarker(state.centre.lat, state.centre.lng);
+            map.fitBounds(L.latLng(state.centre.lat, state.centre.lng).toBounds(NEARBY_RADIUS_M * 2));
+          }
           render();
           setPanelState('expanded');
         },

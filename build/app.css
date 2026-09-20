@@ -125,6 +125,28 @@ html, body {
 #locate:hover, #locate:focus-visible { color: var(--accent); background: var(--surface); }
 #locate[data-active="1"] { color: var(--accent); }
 
+/* "You are here" marker, dropped by #locate onto the map itself. */
+.me-marker { position: relative; width: 18px; height: 18px; }
+.me-dot {
+  position: absolute; top: 50%; left: 50%;
+  width: 12px; height: 12px; margin: -6px 0 0 -6px;
+  background: #35d07f; border: 2px solid #fff; border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+}
+.me-pulse {
+  position: absolute; top: 50%; left: 50%;
+  width: 18px; height: 18px; margin: -9px 0 0 -9px;
+  background: #35d07f; border-radius: 50%; opacity: 0.55;
+  animation: me-pulse 2s ease-out infinite;
+}
+@keyframes me-pulse {
+  0%   { transform: scale(0.6); opacity: 0.55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .me-pulse { animation: none; opacity: 0.25; }
+}
+
 button { font-family: inherit; font-size: 13px; }
 
 .ghost {

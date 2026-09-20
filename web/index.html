@@ -817,6 +817,28 @@ html, body {
 #locate:hover, #locate:focus-visible { color: var(--accent); background: var(--surface); }
 #locate[data-active="1"] { color: var(--accent); }
 
+/* "You are here" marker, dropped by #locate onto the map itself. */
+.me-marker { position: relative; width: 18px; height: 18px; }
+.me-dot {
+  position: absolute; top: 50%; left: 50%;
+  width: 12px; height: 12px; margin: -6px 0 0 -6px;
+  background: #35d07f; border: 2px solid #fff; border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.25);
+}
+.me-pulse {
+  position: absolute; top: 50%; left: 50%;
+  width: 18px; height: 18px; margin: -9px 0 0 -9px;
+  background: #35d07f; border-radius: 50%; opacity: 0.55;
+  animation: me-pulse 2s ease-out infinite;
+}
+@keyframes me-pulse {
+  0%   { transform: scale(0.6); opacity: 0.55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .me-pulse { animation: none; opacity: 0.25; }
+}
+
 button { font-family: inherit; font-size: 13px; }
 
 .ghost {
@@ -2489,6 +2511,9 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
   var tilesFailed = false;
   var CLUSTER_PIXEL_RADIUS = 70; // target on-screen radius for a grouped cell, in CSS px
   var CLUSTER_MIN_SITES = 40;    // below this, bucketing has nothing worth merging anyway
+  var NEARBY_RADIUS_M = 25000;   // "near me" zoom-to-fit radius
+  var meMarker = null;    // "you are here" dot — lives outside markerLayer so
+  var meCircle = null;    // it survives the clearLayers() on every render()
 
   function initMap() {
     map = L.map('map', {
@@ -2653,6 +2678,44 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
     });
 
     if (tilesFailed) drawFallbackMap(display.map(function (item) { return item.site; }));
+  }
+
+  /**
+   * Drop (or move) the "you are here" dot and its faint 25km reference ring.
+   * Added straight to the map rather than markerLayer, which is wiped and
+   * rebuilt on every render() — this marker has to survive panning/zooming.
+   */
+  function showMeMarker(lat, lng) {
+    if (meMarker) {
+      meMarker.setLatLng([lat, lng]);
+      meCircle.setLatLng([lat, lng]);
+      return;
+    }
+    meMarker = L.marker([lat, lng], {
+      icon: L.divIcon({
+        className: '',
+        html: '<div class="me-marker"><div class="me-pulse"></div><div class="me-dot"></div></div>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+      }),
+      keyboard: false,
+      zIndexOffset: 1000,
+    });
+    meMarker.bindTooltip('You are here', { direction: 'top', offset: [0, -9] });
+    meMarker.addTo(map);
+
+    meCircle = L.circle([lat, lng], {
+      // Matches the "selected charger" accent used elsewhere on the canvas
+      // renderer (see the circleMarker color above) — Leaflet's canvas path
+      // styling needs a literal colour, not a CSS custom property.
+      radius: NEARBY_RADIUS_M,
+      color: '#35d07f',
+      weight: 1.5,
+      dashArray: '4,6',
+      fill: false,
+      interactive: false,
+    });
+    meCircle.addTo(map);
   }
 
   /**
@@ -3184,7 +3247,10 @@ window.EVMAP_SITES = [{"id":"au-s123747-1308699-business-owner","name":"Charles 
       navigator.geolocation.getCurrentPosition(
         function (pos) {
           state.centre = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-          if (map && !tilesFailed) map.setView([state.centre.lat, state.centre.lng], 11);
+          if (map && !tilesFailed) {
+            showMeMarker(state.centre.lat, state.centre.lng);
+            map.fitBounds(L.latLng(state.centre.lat, state.centre.lng).toBounds(NEARBY_RADIUS_M * 2));
+          }
           render();
           setPanelState('expanded');
         },
