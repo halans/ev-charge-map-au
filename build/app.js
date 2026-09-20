@@ -48,7 +48,7 @@
   var tilesFailed = false;
   var CLUSTER_PIXEL_RADIUS = 70; // target on-screen radius for a grouped cell, in CSS px
   var CLUSTER_MIN_SITES = 40;    // below this, bucketing has nothing worth merging anyway
-  var NEARBY_RADIUS_M = 25000;   // "near me" zoom-to-fit radius
+  var NEARBY_RADIUS_M = 15000;   // "near me" zoom-to-fit radius
   var meMarker = null;    // "you are here" dot — lives outside markerLayer so
   var meCircle = null;    // it survives the clearLayers() on every render()
 
@@ -218,7 +218,8 @@
   }
 
   /**
-   * Drop (or move) the "you are here" dot and its faint 25km reference ring.
+   * Drop (or move) the "you are here" dot and its faint reference ring
+   * (radius set by NEARBY_RADIUS_M).
    * Added straight to the map rather than markerLayer, which is wiped and
    * rebuilt on every render() — this marker has to survive panning/zooming.
    */
